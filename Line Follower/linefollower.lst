@@ -1,0 +1,2397 @@
+
+
+HI-TECH Software LITE Macro Assembler (PIC18) V9.66 build 8870 
+                                                       Sun Aug 26 01:26:13 2012
+
+HI-TECH Software Omniscient Code Generator build 8870
+     1  000000                     opt subtitle "HI-TECH Software Omniscient Code G
+                                 enerator build 8870"
+     2                           
+     3                           	processor	18F4431
+     4  000000                     porta	equ	0F80h
+     5  000000                     portb	equ	0F81h
+     6  000000                     portc	equ	0F82h
+     7  000000                     portd	equ	0F83h
+     8  000000                     porte	equ	0F84h
+     9  000000                     lata	equ	0F89h
+    10  000000                     latb	equ	0F8Ah
+    11  000000                     latc	equ	0F8Bh
+    12  000000                     latd	equ	0F8Ch
+    13  000000                     late	equ	0F8Dh
+    14  000000                     trisa	equ	0F92h
+    15  000000                     trisb	equ	0F93h
+    16  000000                     trisc	equ	0F94h
+    17  000000                     trisd	equ	0F95h
+    18  000000                     trise	equ	0F96h
+    19  000000                     pie1	equ	0F9Dh
+    20  000000                     pir1	equ	0F9Eh
+    21  000000                     ipr1	equ	0F9Fh
+    22  000000                     pie2	equ	0FA0h
+    23  000000                     pir2	equ	0FA1h
+    24  000000                     ipr2	equ	0FA2h
+    25  000000                     t3con	equ	0FB1h
+    26  000000                     tmr3l	equ	0FB2h
+    27  000000                     tmr3h	equ	0FB3h
+    28  000000                     ccp1con	equ	0FBDh
+    29  000000                     ccpr1l	equ	0FBEh
+    30  000000                     ccpr1h	equ	0FBFh
+    31  000000                     adcon1	equ	0FC1h
+    32  000000                     adcon0	equ	0FC2h
+    33  000000                     adresl	equ	0FC3h
+    34  000000                     adresh	equ	0FC4h
+    35  000000                     sspcon2	equ	0FC5h
+    36  000000                     sspcon1	equ	0FC6h
+    37  000000                     sspstat	equ	0FC7h
+    38  000000                     sspadd	equ	0FC8h
+    39  000000                     sspbuf	equ	0FC9h
+    40  000000                     t2con	equ	0FCAh
+    41  000000                     pr2	equ	0FCBh
+    42  000000                     tmr2	equ	0FCCh
+    43  000000                     t1con	equ	0FCDh
+    44  000000                     tmr1l	equ	0FCEh
+    45  000000                     tmr1h	equ	0FCFh
+    46  000000                     rcon	equ	0FD0h
+    47  000000                     wdtcon	equ	0FD1h
+    48  000000                     lvdcon	equ	0FD2h
+    49  000000                     osccon	equ	0FD3h
+    50  000000                     t0con	equ	0FD5h
+    51  000000                     tmr0l	equ	0FD6h
+    52  000000                     tmr0h	equ	0FD7h
+    53  000000                     status	equ	0FD8h
+    54  000000                     fsr2	equ	0FD9h
+    55  000000                     fsr2l	equ	0FD9h
+    56  000000                     fsr2h	equ	0FDAh
+    57  000000                     plusw2	equ	0FDBh
+    58  000000                     preinc2	equ	0FDCh
+    59  000000                     postdec2	equ	0FDDh
+    60  000000                     postinc2	equ	0FDEh
+    61  000000                     indf2	equ	0FDFh
+    62  000000                     bsr	equ	0FE0h
+    63  000000                     fsr1	equ	0FE1h
+    64  000000                     fsr1l	equ	0FE1h
+    65  000000                     fsr1h	equ	0FE2h
+    66  000000                     plusw1	equ	0FE3h
+    67  000000                     preinc1	equ	0FE4h
+    68  000000                     postdec1	equ	0FE5h
+    69  000000                     postinc1	equ	0FE6h
+    70  000000                     indf1	equ	0FE7h
+    71  000000                     wreg	equ	0FE8h
+    72  000000                     fsr0	equ	0FE9h
+    73  000000                     fsr0l	equ	0FE9h
+    74  000000                     fsr0h	equ	0FEAh
+    75  000000                     plusw0	equ	0FEBh
+    76  000000                     preinc0	equ	0FECh
+    77  000000                     postdec0	equ	0FEDh
+    78  000000                     postinc0	equ	0FEEh
+    79  000000                     indf0	equ	0FEFh
+    80  000000                     intcon3	equ	0FF0h
+    81  000000                     intcon2	equ	0FF1h
+    82  000000                     intcon	equ	0FF2h
+    83  000000                     prod	equ	0FF3h
+    84  000000                     prodl	equ	0FF3h
+    85  000000                     prodh	equ	0FF4h
+    86  000000                     tablat	equ	0FF5h
+    87  000000                     tblptr	equ	0FF6h
+    88  000000                     tblptrl	equ	0FF6h
+    89  000000                     tblptrh	equ	0FF7h
+    90  000000                     tblptru	equ	0FF8h
+    91  000000                     pcl	equ	0FF9h
+    92  000000                     pclat	equ	0FFAh
+    93  000000                     pclath	equ	0FFAh
+    94  000000                     pclatu	equ	0FFBh
+    95  000000                     stkptr	equ	0FFCh
+    96  000000                     tosl	equ	0FFDh
+    97  000000                     tosh	equ	0FFEh
+    98  000000                     tosu	equ	0FFFh
+    99                           	global	__ramtop
+   100                           	global	__accesstop
+   101                           	GLOBAL	__activetblptr
+   102  000000                     __activetblptr	EQU	2
+   103                           	GLOBAL	__smallconst,__Lsmallconst
+   104  000000                     __smallconst	EQU	__Lsmallconst
+   105                           	GLOBAL	__mediumconst,__Lmediumconst
+   106  000000                     __mediumconst	EQU	__Lmediumconst
+   107                           	GLOBAL	__Ldata
+   108  000000                     __Ldata	EQU	0
+   109  000000                     main@angValH	equ	??_main+0
+   110                           	global	main@angValH
+   111  000000                     main@angValL	equ	??_main+2
+   112                           	global	main@angValL
+   113  000000                     main@buffer	equ	??_main+4
+   114                           	global	main@buffer
+   115  000000                     memset@p	equ	??_memset+0
+   116                           	global	memset@p
+   117  000000                     memset@p1	equ	?_memset+0
+   118                           	global	memset@p1
+   119  000000                     memset@c	equ	?_memset+2
+   120                           	global	memset@c
+   121  000000                     memset@n	equ	?_memset+4
+   122                           	global	memset@n
+   123  000000                     uart_send_pkt@j	equ	??_uart_send_pkt+0
+   124                           	global	uart_send_pkt@j
+   125  000000                     uart_send_pkt@i	equ	??_uart_send_pkt+2
+   126                           	global	uart_send_pkt@i
+   127  000000                     uart_send_pkt@pkt	equ	?_uart_send_pkt+0
+   128                           	global	uart_send_pkt@pkt
+   129  000000                     uart_send_pkt@size	equ	?_uart_send_pkt+2
+   130                           	global	uart_send_pkt@size
+   131  000000                     strlen@cp	equ	??_strlen+0
+   132                           	global	strlen@cp
+   133  000000                     strlen@s	equ	?_strlen+0
+   134                           	global	strlen@s
+   135  000000                     sprintf@flag	equ	??_sprintf+0
+   136                           	global	sprintf@flag
+   137  000000                     sprintf@prec	equ	??_sprintf+1
+   138                           	global	sprintf@prec
+   139  000000                     sprintf@c	equ	??_sprintf+2
+   140                           	global	sprintf@c
+   141  000000                     sprintf@ap	equ	??_sprintf+3
+   142                           	global	sprintf@ap
+   143  000000                     sprintf@_val	equ	??_sprintf+5
+   144                           	global	sprintf@_val
+   145  000000                     sprintf@sp	equ	?_sprintf+0
+   146                           	global	sprintf@sp
+   147  000000                     sprintf@f	equ	?_sprintf+2
+   148                           	global	sprintf@f
+   149  000000                     eusart_init@baud1	equ	??_eusart_init+0
+   150                           	global	eusart_init@baud1
+   151  000000                     eusart_init@usart_mode	equ	?_eusart_init+0
+   152                           	global	eusart_init@usart_mode
+   153  000000                     eusart_init@tx_mode	equ	?_eusart_init+1
+   154                           	global	eusart_init@tx_mode
+   155  000000                     eusart_init@fosc	equ	?_eusart_init+2
+   156                           	global	eusart_init@fosc
+   157  000000                     eusart_init@baud	equ	?_eusart_init+6
+   158                           	global	eusart_init@baud
+   159  000000                     delay@i	equ	??_delay+0
+   160                           	global	delay@i
+   161  000000                     delay@j	equ	??_delay+2
+   162                           	global	delay@j
+   163  000000                     delay@cnt	equ	?_delay+0
+   164                           	global	delay@cnt
+   165  000000                     ___lwdiv@counter	equ	??___lwdiv+0
+   166                           	global	___lwdiv@counter
+   167  000000                     ___lwdiv@quotient	equ	??___lwdiv+1
+   168                           	global	___lwdiv@quotient
+   169  000000                     ___lwdiv@dividend	equ	?___lwdiv+0
+   170                           	global	___lwdiv@dividend
+   171  000000                     ___lwdiv@divisor	equ	?___lwdiv+2
+   172                           	global	___lwdiv@divisor
+   173  000000                     uart_send_byte@byte	equ	?_uart_send_byte+0
+   174                           	global	uart_send_byte@byte
+   175                           ;Data sizes: Strings 84, constant 8, data 0, bss
+                                  0, persistent 0 stack 66
+   176                           	global	_main
+   177                           	global	??_main
+   178                           	global	?_main
+   179                           
+   180                           ; *************** function _main ***************
+                                 **
+   181                           ; Defined at:
+   182                           ;		line 101 in file "G:\root\Robotics\Line Follo
+                                 wer\linefollower_main.c"
+   183                           ; Parameters:
+   184                           ;		None
+   185                           ; Auto variables:
+   186                           ;		angValH     	       	type: short 
+   187                           ;		angValL     	       	type: short 
+   188                           ;		buffer      	       	type: unsigned char [32]
+   189                           ; Return value:
+   190                           ;		type: int 
+   191                           ;		size: 2
+   192                           ; Registers used:
+   193                           ;		wreg, fsr0l, fsr0h, status,2, status,0, tblpt
+                                 rl, tblptrh, tblptru, tablat, prodl, prodh, csta
+                                 ck
+   194                           ; Tracked objects:
+   195                           ;		On entry : 0/0
+   196                           ;		On exit  : 0/0
+   197                           ;		Unchanged: 0/0
+   198                           ; Data sizes:
+   199                           ;		Autos:   36
+   200                           ;		Params:   0
+   201                           ;		Temp:     2
+   202                           ;		Total:   38
+   203                           ; This function calls:
+   204                           ;		_init
+   205                           ;		_eusart_init
+   206                           ;		_toggleLed
+   207                           ;		_uart_send_pkt
+   208                           ;		_delay
+   209                           ;		_memset
+   210                           ;		_sprintf
+   211                           ;		_strlen
+   212                           ; This function is called by:
+   213                           ;		Startup code after reset
+   214                           ; This function uses a non-reentrant model
+   215                           ; 
+   216                                   psect   text0,class=CODE,space=0,reloc=2
+   217                           
+   218                           	opt lm
+   219                           	file	"G:\root\Robotics\Line Follower\linefollow
+                                 er_main.c"
+   220                           	line	101
+   221  000000                     	__size_of_main	equ	__end_of_main-_main
+   222                           ;linefollower_main.c: 100: int main()
+   223                           ;linefollower_main.c: 101: {
+   224                           	
+   225  000566                     _main:		; BSR set to: ?
+   226                           
+   227                           	opt stack 31
+   228                           	line	102
+   229                           ;linefollower_main.c: 102: short int angValL=0,a
+                                 ngValH=0;
+   230  000566  0E00               	movlw	low(0)
+   231  000568  0100               	movlb	0	; () banked
+   232  00056A  0100               	movlb	0	; () banked
+   233  00056C  6FC0               	movwf	((main@angValL))&0ffh
+   234  00056E  0E00               	movlw	high(0)
+   235  000570  0100               	movlb	0	; () banked
+   236  000572  6FC1               	movwf	((main@angValL+1))&0ffh
+   237  000574  0E00               	movlw	low(0)
+   238  000576  0100               	movlb	0	; () banked
+   239  000578  0100               	movlb	0	; () banked
+   240  00057A  6FBE               	movwf	((main@angValH))&0ffh
+   241  00057C  0E00               	movlw	high(0)
+   242  00057E  0100               	movlb	0	; () banked
+   243  000580  6FBF               	movwf	((main@angValH+1))&0ffh
+   244                           	line	104
+   245                           ;linefollower_main.c: 103: char buffer[32];
+   246                           ;linefollower_main.c: 104: init();
+   247  000582  EC3B  F005         	call	_init	;wreg free
+   248                           	line	106
+   249                           ;linefollower_main.c: 106: eusart_init(0,0,0,0);
+   250  000586  0E00               	movlw	low(0)
+   251  000588  0100               	movlb	0	; () banked
+   252  00058A  0100               	movlb	0	; () banked
+   253  00058C  6FEA               	movwf	(0+(?_eusart_init+06h))&0ffh
+   254  00058E  0E00               	movlw	high(0)
+   255  000590  0100               	movlb	0	; () banked
+   256  000592  6FEB               	movwf	(1+(?_eusart_init+06h))&0ffh
+   257  000594  0E00               	movlw	low(0)
+   258  000596  0100               	movlb	0	; () banked
+   259  000598  0100               	movlb	0	; () banked
+   260  00059A  6FE6               	movwf	(0+(?_eusart_init+02h))&0ffh
+   261  00059C  0E00               	movlw	high(0)
+   262  00059E  0100               	movlb	0	; () banked
+   263  0005A0  6FE7               	movwf	(1+(?_eusart_init+02h))&0ffh
+   264  0005A2  0E00               	movlw	low highword(0)
+   265  0005A4  0100               	movlb	0	; () banked
+   266  0005A6  6FE8               	movwf	(2+(?_eusart_init+02h))&0ffh
+   267  0005A8  0E00               	movlw	high highword(0)
+   268  0005AA  0100               	movlb	0	; () banked
+   269  0005AC  6FE9               	movwf	(3+(?_eusart_init+02h))&0ffh
+   270  0005AE  0100               	movlb	0	; () banked
+   271  0005B0  6FE2               	movwf	(??_main+36+0)&0ffh
+   272  0005B2  0E00               	movlw	low(0)
+   273  0005B4  0100               	movlb	0	; () banked
+   274  0005B6  0100               	movlb	0	; () banked
+   275  0005B8  6FE5               	movwf	(0+(?_eusart_init+01h))&0ffh
+   276  0005BA  0100               	movlb	0	; () banked
+   277  0005BC  51E2               	movf	(??_main+36+0)&0ffh,w
+   278  0005BE  0100               	movlb	0	; () banked
+   279  0005C0  6FE3               	movwf	(??_main+37+0)&0ffh
+   280  0005C2  0E00               	movlw	low(0)
+   281  0005C4  0100               	movlb	0	; () banked
+   282  0005C6  0100               	movlb	0	; () banked
+   283  0005C8  6FE4               	movwf	((?_eusart_init))&0ffh
+   284  0005CA  0100               	movlb	0	; () banked
+   285  0005CC  51E3               	movf	(??_main+37+0)&0ffh,w
+   286  0005CE  ECC6  F004         	call	_eusart_init	;wreg free
+   287                           	line	109
+   288                           ;linefollower_main.c: 109: toggleLed();
+   289  0005D2  EC12  F005         	call	_toggleLed	;wreg free
+   290                           	line	110
+   291                           ;linefollower_main.c: 110: toggleLed();
+   292  0005D6  EC12  F005         	call	_toggleLed	;wreg free
+   293                           	line	111
+   294                           ;linefollower_main.c: 111: toggleLed();
+   295  0005DA  EC12  F005         	call	_toggleLed	;wreg free
+   296                           	line	112
+   297                           ;linefollower_main.c: 112: toggleLed();
+   298  0005DE  EC12  F005         	call	_toggleLed	;wreg free
+   299                           	line	113
+   300                           ;linefollower_main.c: 113: toggleLed();
+   301  0005E2  EC12  F005         	call	_toggleLed	;wreg free
+   302                           	line	115
+   303                           ;linefollower_main.c: 115: if(0)
+   304  0005E6  EFF5  F002         	goto	l258
+   305                           	line	123
+   306                           	
+   307  0005EA                     l258:		; BSR set to: ?
+   308                           
+   309                           	line	126
+   310                           ;linefollower_main.c: 123: }
+   311                           ;linefollower_main.c: 126: uart_send_pkt("starte
+                                 d\n",8);
+   312  0005EA  0E08               	movlw	low(08h)
+   313  0005EC  0100               	movlb	0	; () banked
+   314  0005EE  0100               	movlb	0	; () banked
+   315  0005F0  6FE6               	movwf	(0+(?_uart_send_pkt+02h))&0ffh
+   316  0005F2  0E00               	movlw	high(08h)
+   317  0005F4  0100               	movlb	0	; () banked
+   318  0005F6  6FE7               	movwf	(1+(?_uart_send_pkt+02h))&0ffh
+   319  0005F8  0E54               	movlw	low(STR_4)
+   320  0005FA  0100               	movlb	0	; () banked
+   321  0005FC  0100               	movlb	0	; () banked
+   322  0005FE  6FE4               	movwf	((?_uart_send_pkt))&0ffh
+   323  000600  0E03               	movlw	high(STR_4)
+   324  000602  0100               	movlb	0	; () banked
+   325  000604  6FE5               	movwf	((?_uart_send_pkt+1))&0ffh
+   326  000606  EC3A  F004         	call	_uart_send_pkt	;wreg free
+   327                           	line	127
+   328                           ;linefollower_main.c: 127: GO_nDONE =1;
+   329  00060A  82C2               	bsf	c:(32273/8),(32273)&7	;volatile
+   330                           	line	128
+   331                           ;linefollower_main.c: 128: while(1)
+   332                           	
+   333  00060C                     l260:		; BSR set to: ?
+   334                           
+   335                           	line	131
+   336                           ;linefollower_main.c: 129: {
+   337                           ;linefollower_main.c: 131: while ((GO_nDONE));
+   338  00060C  EF08  F003         	goto	l262
+   339                           	
+   340  000610                     l262:		; BSR set to: ?
+   341                           
+   342  000610  B2C2               	btfsc	c:(32273/8),(32273)&7	;volatile
+   343  000612  EF0D  F003         	goto	u201
+   344  000616  EF0F  F003         	goto	u200
+   345  00061A                     u201:
+   346  00061A  EF08  F003         	goto	l262
+   347  00061E                     u200:
+   348                           	
+   349  00061E                     l264:		; BSR set to: ?
+   350                           
+   351                           	line	133
+   352                           ;linefollower_main.c: 133: angValH = ADRESH;
+   353  00061E  0100               	movlb	0	; () banked
+   354  000620  CFC4 F0BE          	movff	(c:4036),(main@angValH)	;volatile
+   355  000624  0100               	movlb	0	; () banked
+   356  000626  0100               	movlb	0	; () banked
+   357  000628  6BBF               	clrf	((main@angValH+1))&0ffh
+   358                           	line	135
+   359                           ;linefollower_main.c: 135: angValL = ADRESL ;
+   360  00062A  0100               	movlb	0	; () banked
+   361  00062C  CFC3 F0C0          	movff	(c:4035),(main@angValL)	;volatile
+   362  000630  0100               	movlb	0	; () banked
+   363  000632  0100               	movlb	0	; () banked
+   364  000634  6BC1               	clrf	((main@angValL+1))&0ffh
+   365                           	line	136
+   366                           ;linefollower_main.c: 136: ADIF =0;
+   367  000636  9C9E               	bcf	c:(31990/8),(31990)&7	;volatile
+   368                           	line	140
+   369                           ;linefollower_main.c: 140: memset(buffer,0,sizeo
+                                 f(buffer));
+   370  000638  0E20               	movlw	low(020h)
+   371  00063A  0100               	movlb	0	; () banked
+   372  00063C  0100               	movlb	0	; () banked
+   373  00063E  6FE8               	movwf	(0+(?_memset+04h))&0ffh
+   374  000640  0E00               	movlw	high(020h)
+   375  000642  0100               	movlb	0	; () banked
+   376  000644  6FE9               	movwf	(1+(?_memset+04h))&0ffh
+   377  000646  0E00               	movlw	low(0)
+   378  000648  0100               	movlb	0	; () banked
+   379  00064A  0100               	movlb	0	; () banked
+   380  00064C  6FE6               	movwf	(0+(?_memset+02h))&0ffh
+   381  00064E  0E00               	movlw	high(0)
+   382  000650  0100               	movlb	0	; () banked
+   383  000652  6FE7               	movwf	(1+(?_memset+02h))&0ffh
+   384  000654  0100               	movlb	0	; () banked
+   385  000656  0EC2               	movlw	low(main@buffer)
+   386  000658  0100               	movlb	0	; () banked
+   387  00065A  0100               	movlb	0	; () banked
+   388  00065C  6FE4               	movwf	((?_memset))&0ffh
+   389  00065E  0100               	movlb	0	; () banked
+   390  000660  0E00               	movlw	high(main@buffer)
+   391  000662  0100               	movlb	0	; () banked
+   392  000664  6FE5               	movwf	((?_memset+1))&0ffh
+   393  000666  ECEE  F004         	call	_memset	;wreg free
+   394                           	line	141
+   395                           ;linefollower_main.c: 141: sprintf(buffer,"0x%x 
+                                 0x%x\n",angValH,angValL);
+   396  00066A  C0C0  F0EA         	movff	(main@angValL),0+(?_sprintf+06h)
+   397  00066E  C0C1  F0EB         	movff	(main@angValL+1),1+(?_sprintf+06h)
+   398  000672  C0BE  F0E8         	movff	(main@angValH),0+(?_sprintf+04h)
+   399  000676  C0BF  F0E9         	movff	(main@angValH+1),1+(?_sprintf+04h)
+   400  00067A  0E49               	movlw	low(STR_5)
+   401  00067C  0100               	movlb	0	; () banked
+   402  00067E  0100               	movlb	0	; () banked
+   403  000680  6FE6               	movwf	(0+(?_sprintf+02h))&0ffh
+   404  000682  0E03               	movlw	high(STR_5)
+   405  000684  0100               	movlb	0	; () banked
+   406  000686  6FE7               	movwf	(1+(?_sprintf+02h))&0ffh
+   407  000688  0100               	movlb	0	; () banked
+   408  00068A  0EC2               	movlw	low(main@buffer)
+   409  00068C  0100               	movlb	0	; () banked
+   410  00068E  0100               	movlb	0	; () banked
+   411  000690  6FE4               	movwf	((?_sprintf))&0ffh
+   412  000692  0100               	movlb	0	; () banked
+   413  000694  0E00               	movlw	high(main@buffer)
+   414  000696  0100               	movlb	0	; () banked
+   415  000698  6FE5               	movwf	((?_sprintf+1))&0ffh
+   416  00069A  ECAF  F001         	call	_sprintf	;wreg free
+   417                           	line	142
+   418                           ;linefollower_main.c: 142: uart_send_pkt(buffer,
+                                 strlen((const char *)buffer));
+   419  00069E  0100               	movlb	0	; () banked
+   420  0006A0  0EC2               	movlw	low(main@buffer)
+   421  0006A2  0100               	movlb	0	; () banked
+   422  0006A4  0100               	movlb	0	; () banked
+   423  0006A6  6FE4               	movwf	((?_strlen))&0ffh
+   424  0006A8  0100               	movlb	0	; () banked
+   425  0006AA  0E00               	movlw	high(main@buffer)
+   426  0006AC  0100               	movlb	0	; () banked
+   427  0006AE  6FE5               	movwf	((?_strlen+1))&0ffh
+   428  0006B0  EC8E  F004         	call	_strlen	;wreg free
+   429  0006B4  C0E4  F0E6         	movff	0+?_strlen,0+(?_uart_send_pkt+02h)
+   430  0006B8  C0E5  F0E7         	movff	1+?_strlen,1+(?_uart_send_pkt+02h)
+   431  0006BC  0100               	movlb	0	; () banked
+   432  0006BE  0EC2               	movlw	low(main@buffer)
+   433  0006C0  0100               	movlb	0	; () banked
+   434  0006C2  0100               	movlb	0	; () banked
+   435  0006C4  6FE4               	movwf	((?_uart_send_pkt))&0ffh
+   436  0006C6  0100               	movlb	0	; () banked
+   437  0006C8  0E00               	movlw	high(main@buffer)
+   438  0006CA  0100               	movlb	0	; () banked
+   439  0006CC  6FE5               	movwf	((?_uart_send_pkt+1))&0ffh
+   440  0006CE  EC3A  F004         	call	_uart_send_pkt	;wreg free
+   441                           	line	144
+   442                           ;linefollower_main.c: 144: GO_nDONE =1;
+   443  0006D2  82C2               	bsf	c:(32273/8),(32273)&7	;volatile
+   444                           	line	145
+   445                           ;linefollower_main.c: 145: delay(500);
+   446  0006D4  0EF4               	movlw	low(01F4h)
+   447  0006D6  0100               	movlb	0	; () banked
+   448  0006D8  0100               	movlb	0	; () banked
+   449  0006DA  6FE4               	movwf	((?_delay))&0ffh
+   450  0006DC  0E01               	movlw	high(01F4h)
+   451  0006DE  0100               	movlb	0	; () banked
+   452  0006E0  6FE5               	movwf	((?_delay+1))&0ffh
+   453  0006E2  ECDF  F003         	call	_delay	;wreg free
+   454                           	line	146
+   455                           	
+   456  0006E6                     l259:		; BSR set to: ?
+   457                           
+   458                           	line	128
+   459  0006E6  EF06  F003         	goto	l260
+   460                           	global	start
+   461  0006EA  EF00  F000         	goto	start
+   462                           	opt stack 0
+   463                           GLOBAL __end_of_main
+   464  0006EE                     	__end_of_main:
+   465                           	FNSIZE	_main,38,0
+   466                           ; =============== function _main ends ==========
+                                 ==
+   467                           
+   468                                   psect   text1,class=CODE,space=0,reloc=2
+   469                           	line	149
+   470                           
+   471                           	opt lm
+   472                           	signat	_main,90
+   473                           	global	_memset
+   474                           	global	??_memset
+   475                           	global	?_memset
+   476                           
+   477                           ; *************** function _memset *************
+                                 ****
+   478                           ; Defined at:
+   479                           ;		line 10 in file "C:\Program Files\HI-TECH Sof
+                                 tware\PICC-18\PRO\9.66\sources\memset.c"
+   480                           ; Parameters:
+   481                           ;		p1             size:   2offs:   0	type: PTR v
+                                 oid ; Largest target is 32
+   482                           ;		 -> main@buffer(32), 
+   483                           ;		c              size:   2offs:   2	type: int 
+   484                           ;		n              size:   2offs:   4	type: unsig
+                                 ned int 
+   485                           ; Auto variables:
+   486                           ;		p           	       	type: PTR unsigned char 
+                                 ; Largest target is 32
+   487                           ;		 -> main@buffer(32), 
+   488                           ; Return value:
+   489                           ;		type: PTR void 
+   490                           ;		size: 2
+   491                           ; Registers used:
+   492                           ;		wreg, fsr0l, fsr0h, status,2, status,0
+   493                           ; Tracked objects:
+   494                           ;		On entry : 0/0
+   495                           ;		On exit  : 0/0
+   496                           ;		Unchanged: 0/0
+   497                           ; Data sizes:
+   498                           ;		Autos:    2
+   499                           ;		Params:   6
+   500                           ;		Temp:     0
+   501                           ;		Total:    8
+   502                           ; This function calls:
+   503                           ;		Nothing
+   504                           ; This function is called by:
+   505                           ;		_main
+   506                           ; This function uses a non-reentrant model
+   507                           ; 
+   508                           	file	"C:\Program Files\HI-TECH Software\PICC-18
+                                 \PRO\9.66\sources\memset.c"
+   509                           	line	10
+   510  000000                     	__size_of_memset	equ	__end_of_memset-_memset
+   511                           	
+   512  0009DC                     _memset:		; BSR set to: ?
+   513                           
+   514                           	opt stack 30
+   515                           	line	18
+   516  0009DC  C0E4  F0EA         	movff	(memset@p1),(memset@p)
+   517  0009E0  C0E5  F0EB         	movff	(memset@p1+1),(memset@p+1)
+   518                           	line	19
+   519  0009E4  EFFF  F004         	goto	l558
+   520                           	
+   521  0009E8                     l559:		; BSR set to: ?
+   522                           
+   523                           	line	20
+   524  0009E8  C0EA  FFE9         	movff	(memset@p),fsr0l
+   525  0009EC  C0EB  FFEA         	movff	(memset@p+1),fsr0h
+   526  0009F0  0100               	movlb	0	; () banked
+   527  0009F2  C0E6  FFEF         	movff	(memset@c),indf0
+   528                           
+   529  0009F6  0100               	movlb	0	; () banked
+   530  0009F8  0100               	movlb	0	; () banked
+   531  0009FA  4BEA               	infsnz	((memset@p))&0ffh
+   532  0009FC  2BEB               	incf	((memset@p+1))&0ffh
+   533                           	
+   534  0009FE                     l558:		; BSR set to: ?
+   535                           
+   536                           	line	19
+   537  0009FE  0100               	movlb	0	; () banked
+   538  000A00  0100               	movlb	0	; () banked
+   539  000A02  07E8               	decf	((memset@n))&0ffh
+   540  000A04  A0D8               	btfss	status,0
+   541  000A06  07E9               	decf	((memset@n+1))&0ffh
+   542  000A08  0100               	movlb	0	; () banked
+   543  000A0A  29E8               	incf	((memset@n))&0ffh,w
+   544  000A0C  B4D8               	btfsc	status,2
+   545  000A0E  29E9               	incf ((memset@n+1))&0ffh,w
+   546                           
+   547  000A10  A4D8               	btfss	status,2
+   548  000A12  EF0D  F005         	goto	u311
+   549  000A16  EF0F  F005         	goto	u310
+   550  000A1A                     u311:
+   551  000A1A  EFF4  F004         	goto	l559
+   552  000A1E                     u310:
+   553                           	
+   554  000A1E                     l560:		; BSR set to: ?
+   555                           
+   556                           	line	21
+   557  000A1E  EF11  F005         	goto	l557
+   558                           	line	22
+   559  000A22                     l557:
+   560                           			; BSR set to: ?
+   561                           
+   562  000A22  0012               	return
+   563                           	opt stack 0
+   564                           GLOBAL __end_of_memset
+   565  000A24                     	__end_of_memset:
+   566                           	FNSIZE	_memset,2,6
+   567                           ; =============== function _memset ends ========
+                                 ====
+   568                           
+   569                           	signat	_memset,12410
+   570                           	global	_uart_send_pkt
+   571                           	global	??_uart_send_pkt
+   572                           	global	?_uart_send_pkt
+   573                           
+   574                           ; *************** function _uart_send_pkt ******
+                                 ***********
+   575                           ; Defined at:
+   576                           ;		line 49 in file "G:\root\Robotics\Line Follow
+                                 er\uart.c"
+   577                           ; Parameters:
+   578                           ;		pkt            size:   2offs:   0	type: PTR u
+                                 nsigned char ; Largest target is 32
+   579                           ;		 -> main@buffer(32), STR_4(9), STR_3(15), STR
+                                 _2(18), 
+   580                           ;		 -> STR_1(14), 
+   581                           ;		size           size:   2offs:   2	type: int 
+   582                           ; Auto variables:
+   583                           ;		j           	       	type: int 
+   584                           ;		i           	       	type: int 
+   585                           ; Return value:
+   586                           ;		type: void 
+   587                           ;		size: 0
+   588                           ; Registers used:
+   589                           ;		wreg, fsr0l, fsr0h, status,2, status,0, tblpt
+                                 rl, tblptrh, tblptru, tablat, cstack
+   590                           ; Tracked objects:
+   591                           ;		On entry : 0/0
+   592                           ;		On exit  : 0/0
+   593                           ;		Unchanged: 0/0
+   594                           ; Data sizes:
+   595                           ;		Autos:    4
+   596                           ;		Params:   4
+   597                           ;		Temp:     2
+   598                           ;		Total:   10
+   599                           ; This function calls:
+   600                           ;		_uart_send_byte
+   601                           ; This function is called by:
+   602                           ;		_main
+   603                           ; This function uses a non-reentrant model
+   604                           ; 
+   605                                   psect   text2,class=CODE,space=0,reloc=2
+   606                           
+   607                           	opt lm
+   608                           	file	"G:\root\Robotics\Line Follower\uart.c"
+   609                           	line	49
+   610  000000                     	__size_of_uart_send_pkt	equ	__end_of_uart_send_
+                                 pkt-_uart_send_pkt
+   611                           ;uart.c: 48: void uart_send_pkt(unsigned char *p
+                                 kt, int size)
+   612                           ;uart.c: 49: {
+   613                           	
+   614  000874                     _uart_send_pkt:		; BSR set to: ?
+   615+                          
+   616+                          	opt stack 30
+   617+                          	line	50
+   618+ 000874  0E00               	movlw	low(0)
+   619+ 000876  0100               	movlb	0	; () banked
+   620  000878  0100               	movlb	0	; () banked
+   621  00087A  6FE8               	movwf	((uart_send_pkt@j))&0ffh
+   622  00087C  0E00               	movlw	high(0)
+   623  00087E  0100               	movlb	0	; () banked
+   624  000880  6FE9               	movwf	((uart_send_pkt@j+1))&0ffh
+   625                           	line	51
+   626                           ;uart.c: 51: for(i = 0; i < size; i++)
+   627  000882  0E00               	movlw	low(0)
+   628  000884  0100               	movlb	0	; () banked
+   629  000886  0100               	movlb	0	; () banked
+   630  000888  6FEA               	movwf	((uart_send_pkt@i))&0ffh
+   631  00088A  0E00               	movlw	high(0)
+   632  00088C  0100               	movlb	0	; () banked
+   633  00088E  6FEB               	movwf	((uart_send_pkt@i+1))&0ffh
+   634  000890  EF75  F004         	goto	l526
+   635                           	line	52
+   636                           	
+   637  000894                     l523:		; BSR set to: ?
+   638                           
+   639                           	line	53
+   640                           ;uart.c: 52: {
+   641                           ;uart.c: 53: uart_send_byte(pkt[i]);
+   642  000894  0100               	movlb	0	; () banked
+   643  000896  0100               	movlb	0	; () banked
+   644  000898  51EA               	movf	((uart_send_pkt@i))&0ffh,w
+   645  00089A  0100               	movlb	0	; () banked
+   646  00089C  0100               	movlb	0	; () banked
+   647  00089E  25E4               	addwf	((uart_send_pkt@pkt))&0ffh,w
+   648  0008A0  0100               	movlb	0	; () banked
+   649  0008A2  6FEC               	movwf	(??_uart_send_pkt+4+0)&0ffh
+   650  0008A4  6AE8               	clrf	wreg
+   651  0008A6  0100               	movlb	0	; () banked
+   652  0008A8  0100               	movlb	0	; () banked
+   653  0008AA  BFEA               	btfsc	((uart_send_pkt@i))&0ffh,7
+   654  0008AC  68E8               	setf	wreg
+   655  0008AE  0100               	movlb	0	; () banked
+   656  0008B0  0100               	movlb	0	; () banked
+   657  0008B2  21E5               	addwfc	((uart_send_pkt@pkt+1))&0ffh,w
+   658  0008B4  0100               	movlb	0	; () banked
+   659  0008B6  6FED               	movwf	(??_uart_send_pkt+4+0+1)&0ffh
+   660  0008B8  0100               	movlb	0	; () banked
+   661  0008BA  51EC               	movf	(??_uart_send_pkt+4+0)&0ffh,w
+   662  0008BC  6EF6               	movwf	tblptrl
+   663  0008BE  6EE9               	movwf	fsr0l
+   664  0008C0  0E02               	movlw	high __ramtop-1
+   665  0008C2  6EEA               	movwf	fsr0h
+   666  0008C4  0100               	movlb	0	; () banked
+   667  0008C6  51ED               	movf	(??_uart_send_pkt+4+1)&0ffh,w
+   668  0008C8  64EA               	cpfsgt	fsr0h
+   669  0008CA  D003               	bra	u237
+   670  0008CC  6EEA               	movwf	fsr0h
+   671  0008CE  50EF               	movf	indf0,w
+   672  0008D0  D003               	bra	u230
+   673  0008D2                     u237:
+   674  0008D2  6EF7               	movwf	tblptrh
+   675  0008D4  0008               	tblrd	*
+   676                           	
+   677  0008D6  50F5               	movf	tablat,w
+   678  0008D8                     u230:
+   679  0008D8  0100               	movlb	0	; () banked
+   680  0008DA  0100               	movlb	0	; () banked
+   681  0008DC  6FEE               	movwf	((?_uart_send_byte))&0ffh
+   682  0008DE  EC2D  F005         	call	_uart_send_byte	;wreg free
+   683                           	line	51
+   684  0008E2  0100               	movlb	0	; () banked
+   685  0008E4  0100               	movlb	0	; () banked
+   686  0008E6  4BEA               	infsnz	((uart_send_pkt@i))&0ffh
+   687  0008E8  2BEB               	incf	((uart_send_pkt@i+1))&0ffh
+   688                           	
+   689  0008EA                     l526:		; BSR set to: ?
+   690                           
+   691  0008EA  0100               	movlb	0	; () banked
+   692  0008EC  0100               	movlb	0	; () banked
+   693  0008EE  51EB               	movf	((uart_send_pkt@i+1))&0ffh,w
+   694  0008F0  0A80               	xorlw	80h
+   695  0008F2  0100               	movlb	0	; () banked
+   696  0008F4  6FEC               	movwf	(??_uart_send_pkt+4+0)&0ffh
+   697  0008F6  0100               	movlb	0	; () banked
+   698  0008F8  51E6               	movf	((uart_send_pkt@size))&0ffh,w
+   699  0008FA  0100               	movlb	0	; () banked
+   700  0008FC  0100               	movlb	0	; () banked
+   701  0008FE  5DEA               	subwf	((uart_send_pkt@i))&0ffh,w
+   702  000900  0100               	movlb	0	; () banked
+   703  000902  0100               	movlb	0	; () banked
+   704  000904  51E7               	movf	((uart_send_pkt@size+1))&0ffh,w
+   705  000906  0A80               	xorlw	80h
+   706  000908  0100               	movlb	0	; () banked
+   707  00090A  59EC               	subwfb	(??_uart_send_pkt+4+0)&0ffh,w
+   708  00090C  A0D8               	btfss	status,0
+   709  00090E  EF8B  F004         	goto	u241
+   710  000912  EF8D  F004         	goto	u240
+   711  000916                     u241:
+   712  000916  EF4A  F004         	goto	l523
+   713  00091A                     u240:
+   714                           	
+   715  00091A                     l524:		; BSR set to: ?
+   716                           
+   717                           	line	56
+   718                           ;uart.c: 54: }
+   719                           ;uart.c: 56: }
+   720  00091A                     l522:
+   721                           			; BSR set to: ?
+   722                           
+   723  00091A  0012               	return
+   724                           	opt stack 0
+   725                           GLOBAL __end_of_uart_send_pkt
+   726  00091C                     	__end_of_uart_send_pkt:
+   727                           	FNSIZE	_uart_send_pkt,6,4
+   728                           ; =============== function _uart_send_pkt ends =
+                                 ===========
+   729                           
+   730                           	signat	_uart_send_pkt,8312
+   731                           	global	_strlen
+   732                           	global	??_strlen
+   733                           	global	?_strlen
+   734                           
+   735                           ; *************** function _strlen *************
+                                 ****
+   736                           ; Defined at:
+   737                           ;		line 5 in file "C:\Program Files\HI-TECH Soft
+                                 ware\PICC-18\PRO\9.66\sources\strlen.c"
+   738                           ; Parameters:
+   739                           ;		s              size:   2offs:   0	type: PTR c
+                                 onst unsigned char ; Largest target is 32
+   740                           ;		 -> main@buffer(32), 
+   741                           ; Auto variables:
+   742                           ;		cp          	       	type: PTR const unsigned
+                                  char ; Largest target is 32
+   743                           ;		 -> main@buffer(32), 
+   744                           ; Return value:
+   745                           ;		type: unsigned int 
+   746                           ;		size: 2
+   747                           ; Registers used:
+   748                           ;		wreg, fsr0l, fsr0h, status,2, status,0
+   749                           ; Tracked objects:
+   750                           ;		On entry : 0/0
+   751                           ;		On exit  : 0/0
+   752                           ;		Unchanged: 0/0
+   753                           ; Data sizes:
+   754                           ;		Autos:    2
+   755                           ;		Params:   2
+   756                           ;		Temp:     2
+   757                           ;		Total:    6
+   758                           ; This function calls:
+   759                           ;		Nothing
+   760                           ; This function is called by:
+   761                           ;		_main
+   762                           ; This function uses a non-reentrant model
+   763                           ; 
+   764                                   psect   text3,class=CODE,space=0,reloc=2
+   765                           
+   766                           	opt lm
+   767                           	file	"C:\Program Files\HI-TECH Software\PICC-18
+                                 \PRO\9.66\sources\strlen.c"
+   768                           	line	5
+   769  000000                     	__size_of_strlen	equ	__end_of_strlen-_strlen
+   770                           	
+   771  00091C                     _strlen:		; BSR set to: ?
+   772                           
+   773                           	opt stack 30
+   774                           	line	8
+   775  00091C  C0E4  F0E6         	movff	(strlen@s),(strlen@cp)
+   776  000920  C0E5  F0E7         	movff	(strlen@s+1),(strlen@cp+1)
+   777                           	line	9
+   778  000924  EF96  F004         	goto	l562
+   779                           	
+   780  000928                     l563:		; BSR set to: ?
+   781                           
+   782                           	line	10
+   783  000928  EF96  F004         	goto	l562
+   784                           	
+   785  00092C                     l562:		; BSR set to: ?
+   786                           
+   787                           	line	9
+   788  00092C  0100               	movlb	0	; () banked
+   789  00092E  C0E6  FFE9         	movff	(strlen@cp),fsr0l
+   790  000932  0100               	movlb	0	; () banked
+   791  000934  C0E7  FFEA         	movff	(strlen@cp+1),fsr0h
+   792  000938  0100               	movlb	0	; () banked
+   793  00093A  0100               	movlb	0	; () banked
+   794  00093C  4BE6               	infsnz	((strlen@cp))&0ffh
+   795  00093E  2BE7               	incf	((strlen@cp+1))&0ffh
+   796  000940  50EF               	movf	indf0,w
+   797  000942  A4D8               	btfss	status,2
+   798  000944  EFA6  F004         	goto	u321
+   799  000948  EFA8  F004         	goto	u320
+   800  00094C                     u321:
+   801  00094C  EF94  F004         	goto	l563
+   802  000950                     u320:
+   803                           	
+   804  000950                     l564:		; BSR set to: ?
+   805                           
+   806                           	line	11
+   807  000950  0100               	movlb	0	; () banked
+   808  000952  C0E6  F0E8         	movff	(strlen@cp),??_strlen+2+0
+   809  000956  0100               	movlb	0	; () banked
+   810  000958  C0E7  F0E9         	movff	(strlen@cp+1),??_strlen+2+0+1
+   811  00095C  0100               	movlb	0	; () banked
+   812  00095E  0100               	movlb	0	; () banked
+   813  000960  51E4               	movf	((strlen@s))&0ffh,w
+   814  000962  0100               	movlb	0	; () banked
+   815  000964  5FE8               	subwf	(??_strlen+2+0)&0ffh
+   816  000966  0100               	movlb	0	; () banked
+   817  000968  0100               	movlb	0	; () banked
+   818  00096A  51E5               	movf	((strlen@s+1))&0ffh,w
+   819  00096C  0100               	movlb	0	; () banked
+   820  00096E  5BE9               	subwfb	(??_strlen+2+1)&0ffh
+   821  000970  0EFF               	movlw	low(0FFFFh)
+   822  000972  0100               	movlb	0	; () banked
+   823  000974  25E8               	addwf	(??_strlen+2+0)&0ffh,w
+   824  000976  0100               	movlb	0	; () banked
+   825                           	
+   826  000978  0100               	movlb	0	; () banked
+   827  00097A  6FE4               	movwf	((?_strlen))&0ffh
+   828  00097C  0EFF               	movlw	high(0FFFFh)
+   829  00097E  0100               	movlb	0	; () banked
+   830  000980  21E9               	addwfc	(??_strlen+2+1)&0ffh,w
+   831  000982  0100               	movlb	0	; () banked
+   832  000984  6FE5               	movwf	1+((?_strlen))&0ffh
+   833  000986  EFC5  F004         	goto	l561
+   834                           	line	12
+   835  00098A                     l561:
+   836                           			; BSR set to: ?
+   837                           
+   838  00098A  0012               	return
+   839                           	opt stack 0
+   840                           GLOBAL __end_of_strlen
+   841  00098C                     	__end_of_strlen:
+   842                           	FNSIZE	_strlen,4,2
+   843                           ; =============== function _strlen ends ========
+                                 ====
+   844                           
+   845                           	signat	_strlen,4218
+   846                           	global	_sprintf
+   847                           	global	??_sprintf
+   848                           	global	?_sprintf
+   849                           
+   850                           ; *************** function _sprintf ************
+                                 *****
+   851                           ; Defined at:
+   852                           ;		line 492 in file "C:\Program Files\HI-TECH So
+                                 ftware\PICC-18\PRO\9.66\lib\doprnt.c"
+   853                           ; Parameters:
+   854                           ;		sp             size:   2offs:   0	type: PTR u
+                                 nsigned char ; Largest target is 32
+   855                           ;		 -> main@buffer(32), 
+   856                           ;		f              size:   2offs:   2	type: PTR c
+                                 onst unsigned char ; Largest target is 11
+   857                           ;		 -> STR_5(11), 
+   858                           ; Auto variables:
+   859                           ;		flag        	       	type: unsigned char 
+   860                           ;		prec        	       	type: char 
+   861                           ;		c           	       	type: char 
+   862                           ;		ap          	       	type: PTR void [1]
+   863                           ;		_val        	       	type: struct .
+   864                           ; Return value:
+   865                           ;		type: int 
+   866                           ;		size: 2
+   867                           ; Registers used:
+   868                           ;		wreg, fsr0l, fsr0h, status,2, status,0, tblpt
+                                 rl, tblptrh, tblptru, tablat, prodl, prodh, csta
+                                 ck
+   869                           ; Tracked objects:
+   870                           ;		On entry : 0/0
+   871                           ;		On exit  : 0/0
+   872                           ;		Unchanged: 0/0
+   873                           ; Data sizes:
+   874                           ;		Autos:   10
+   875                           ;		Params:   8
+   876                           ;		Temp:     2
+   877                           ;		Total:   20
+   878                           ; This function calls:
+   879                           ;		___lwdiv
+   880                           ; This function is called by:
+   881                           ;		_main
+   882                           ; This function uses a non-reentrant model
+   883                           ; 
+   884                                   psect   text4,class=CODE,space=0,reloc=2
+   885                           
+   886                           	opt lm
+   887                           	file	"C:\Program Files\HI-TECH Software\PICC-18
+                                 \PRO\9.66\lib\doprnt.c"
+   888                           	line	492
+   889  000000                     	__size_of_sprintf	equ	__end_of_sprintf-_sprintf
+   890                           ;doprnt.c: 362: const static unsigned int hexpow
+                                 ers[] = {1, 0x10, 0x100, 0x1000,
+   891                           ;doprnt.c: 366: };
+   892                           ;doprnt.c: 455: int
+   893                           ;doprnt.c: 491: sprintf(char * sp, const char * 
+                                 f, ...)
+   894                           ;doprnt.c: 492: {
+   895                           	
+   896  00035E                     _sprintf:		; BSR set to: ?
+   897                           
+   898                           	opt stack 30
+   899                           	line	541
+   900  00035E  0100               	movlb	0	; () banked
+   901  000360  0EE8               	movlw	low(?_sprintf+04h)
+   902  000362  0100               	movlb	0	; () banked
+   903  000364  0100               	movlb	0	; () banked
+   904  000366  6FEF               	movwf	((sprintf@ap))&0ffh
+   905  000368  0100               	movlb	0	; () banked
+   906  00036A  0E00               	movlw	high(?_sprintf+04h)
+   907  00036C  0100               	movlb	0	; () banked
+   908  00036E  6FF0               	movwf	((sprintf@ap+1))&0ffh
+   909                           	line	544
+   910                           ;doprnt.c: 544: while(c = *f++) {
+   911  000370  EF94  F002         	goto	l540
+   912                           	
+   913  000374                     l541:		; BSR set to: ?
+   914                           
+   915                           	line	546
+   916                           ;doprnt.c: 546: if(c != '%')
+   917  000374  0100               	movlb	0	; () banked
+   918  000376  0100               	movlb	0	; () banked
+   919  000378  51EE               	movf	((sprintf@c))&0ffh,w
+   920  00037A  0A25               	xorlw	37
+   921                           
+   922  00037C  B4D8               	btfsc	status,2
+   923  00037E  EFC3  F001         	goto	u251
+   924  000382  EFC5  F001         	goto	u250
+   925  000386                     u251:
+   926  000386  EFD2  F001         	goto	l543
+   927  00038A                     u250:
+   928                           	line	549
+   929  00038A  C0E4  FFE9         	movff	(sprintf@sp),fsr0l
+   930  00038E  C0E5  FFEA         	movff	(sprintf@sp+1),fsr0h
+   931  000392  0100               	movlb	0	; () banked
+   932  000394  C0EE  FFEF         	movff	(sprintf@c),indf0
+   933                           
+   934                           ;doprnt.c: 548: {
+   935                           ;doprnt.c: 549: ((*sp++ = (c)));
+   936  000398  0100               	movlb	0	; () banked
+   937  00039A  0100               	movlb	0	; () banked
+   938  00039C  4BE4               	infsnz	((sprintf@sp))&0ffh
+   939  00039E  2BE5               	incf	((sprintf@sp+1))&0ffh
+   940                           	line	550
+   941                           ;doprnt.c: 550: continue;
+   942  0003A0  EF94  F002         	goto	l540
+   943                           	line	551
+   944                           	
+   945  0003A4                     l543:		; BSR set to: ?
+   946                           
+   947                           	line	556
+   948                           ;doprnt.c: 551: }
+   949                           ;doprnt.c: 556: flag = 0;
+   950  0003A4  0100               	movlb	0	; () banked
+   951  0003A6  6FF6               	movwf	(??_sprintf+10+0)&0ffh
+   952  0003A8  0E00               	movlw	low(0)
+   953  0003AA  0100               	movlb	0	; () banked
+   954  0003AC  0100               	movlb	0	; () banked
+   955  0003AE  6FEC               	movwf	((sprintf@flag))&0ffh
+   956  0003B0  0100               	movlb	0	; () banked
+   957  0003B2  51F6               	movf	(??_sprintf+10+0)&0ffh,w
+   958                           	line	642
+   959                           ;doprnt.c: 642: switch(c = *f++) {
+   960  0003B4  EFE2  F001         	goto	l545
+   961                           	line	644
+   962                           ;doprnt.c: 644: case 0:
+   963                           	
+   964  0003B8                     l546:		; BSR set to: ?
+   965                           
+   966                           	line	645
+   967                           ;doprnt.c: 645: goto alldone;
+   968  0003B8  EFAA  F002         	goto	l547
+   969                           	line	725
+   970                           ;doprnt.c: 725: case 'x':
+   971                           	
+   972  0003BC                     l548:		; BSR set to: ?
+   973                           
+   974                           	line	730
+   975                           ;doprnt.c: 730: break;
+   976  0003BC  EFF8  F001         	goto	l544
+   977                           	line	809
+   978                           ;doprnt.c: 809: default:
+   979                           	
+   980  0003C0                     l549:		; BSR set to: ?
+   981                           
+   982                           	line	820
+   983                           ;doprnt.c: 820: continue;
+   984  0003C0  EF94  F002         	goto	l540
+   985                           	line	642
+   986                           	
+   987  0003C4                     l545:		; BSR set to: ?
+   988                           
+   989  0003C4  0100               	movlb	0	; () banked
+   990  0003C6  C0E6  FFF6         	movff	(sprintf@f),tblptrl
+   991  0003CA  0100               	movlb	0	; () banked
+   992  0003CC  C0E7  FFF7         	movff	(sprintf@f+1),tblptrh
+   993  0003D0  0100               	movlb	0	; () banked
+   994  0003D2  0100               	movlb	0	; () banked
+   995  0003D4  4BE6               	infsnz	((sprintf@f))&0ffh
+   996  0003D6  2BE7               	incf	((sprintf@f+1))&0ffh
+   997  0003D8  0008               	tblrd	*
+   998                           	
+   999  0003DA  0100               	movlb	0	; () banked
+  1000  0003DC  CFF5 F0EE          	movff	tablat,(sprintf@c)
+  1001  0003E0  0100               	movlb	0	; () banked
+  1002  0003E2  51EE               	movf	((sprintf@c))&0ffh,w
+  1003  0003E4  0A00               	xorlw	0 ^ 0
+  1004  0003E6  E0E8               	bz	l546
+  1005  0003E8  0A78               	xorlw	120 ^ 0
+  1006  0003EA  E0E8               	bz	l548
+  1007  0003EC  EFE0  F001         	goto	l549
+  1008                           
+  1009                           	line	829
+  1010                           	
+  1011  0003F0                     l544:		; BSR set to: ?
+  1012                           
+  1013                           	line	1280
+  1014                           ;doprnt.c: 1267: {
+  1015                           ;doprnt.c: 1280: _val._val = (*(unsigned *)__va_
+                                 arg((*(unsigned **)ap)));
+  1016  0003F0  0100               	movlb	0	; () banked
+  1017  0003F2  C0EF  FFE9         	movff	(sprintf@ap),fsr0l
+  1018  0003F6  0100               	movlb	0	; () banked
+  1019  0003F8  C0F0  FFEA         	movff	(sprintf@ap+1),fsr0h
+  1020  0003FC  0100               	movlb	0	; () banked
+  1021  0003FE  0E02               	movlw	low(02h)
+  1022  000400  0100               	movlb	0	; () banked
+  1023  000402  27EF               	addwf	((sprintf@ap))&0ffh
+  1024  000404  0E00               	movlw	high(02h)
+  1025  000406  0100               	movlb	0	; () banked
+  1026  000408  23F0               	addwfc	((sprintf@ap+1))&0ffh
+  1027  00040A  0100               	movlb	0	; () banked
+  1028  00040C  CFEE F0F1          	movff	postinc0,(sprintf@_val)
+  1029  000410  0100               	movlb	0	; () banked
+  1030  000412  CFED F0F2          	movff	postdec0,(sprintf@_val+1)
+  1031                           	line	1310
+  1032                           ;doprnt.c: 1281: }
+  1033                           ;doprnt.c: 1310: for(c = 1 ; c != sizeof hexpowe
+                                 rs/sizeof hexpowers[0] ; c++)
+  1034  000416  0100               	movlb	0	; () banked
+  1035  000418  6FF6               	movwf	(??_sprintf+10+0)&0ffh
+  1036  00041A  0E01               	movlw	low(01h)
+  1037  00041C  0100               	movlb	0	; () banked
+  1038  00041E  0100               	movlb	0	; () banked
+  1039  000420  6FEE               	movwf	((sprintf@c))&0ffh
+  1040  000422  0100               	movlb	0	; () banked
+  1041  000424  51F6               	movf	(??_sprintf+10+0)&0ffh,w
+  1042  000426  0100               	movlb	0	; () banked
+  1043  000428  0100               	movlb	0	; () banked
+  1044  00042A  51EE               	movf	((sprintf@c))&0ffh,w
+  1045  00042C  0A04               	xorlw	4
+  1046                           
+  1047  00042E  A4D8               	btfss	status,2
+  1048  000430  EF1C  F002         	goto	u261
+  1049  000434  EF1E  F002         	goto	u260
+  1050  000438                     u261:
+  1051  000438  EF20  F002         	goto	l550
+  1052  00043C                     u260:
+  1053  00043C  EF51  F002         	goto	l551
+  1054                           	line	1311
+  1055                           	
+  1056  000440                     l550:		; BSR set to: ?
+  1057                           
+  1058                           ;doprnt.c: 1311: if(_val._val < hexpowers[c])
+  1059  000440  0100               	movlb	0	; () banked
+  1060  000442  0100               	movlb	0	; () banked
+  1061  000444  51EE               	movf	((sprintf@c))&0ffh,w
+  1062  000446  0D02               	mullw	02h
+  1063  000448  0E01               	movlw	low((_hexpowers))
+  1064  00044A  24F3               	addwf	(prodl),c,w
+  1065  00044C  6EF6               	movwf	tblptrl
+  1066  00044E  6AF7               	clrf	tblptrh
+  1067  000450  0E03               	movlw	high((_hexpowers))
+  1068  000452  22F7               	addwfc	tblptrh
+  1069  000454  0009               	tblrd	*+
+  1070                           	
+  1071  000456  CFF5 F0F6          	movff	tablat,??_sprintf+10+0
+  1072  00045A  0009               	tblrd	*+
+  1073                           	
+  1074  00045C  CFF5 F0F7          	movff	tablat,??_sprintf+10+0+1
+  1075  000460  0100               	movlb	0	; () banked
+  1076  000462  51F6               	movf	(??_sprintf+10+0)&0ffh,w
+  1077  000464  0100               	movlb	0	; () banked
+  1078  000466  0100               	movlb	0	; () banked
+  1079  000468  5DF1               	subwf	((sprintf@_val))&0ffh,w
+  1080  00046A  0100               	movlb	0	; () banked
+  1081  00046C  51F7               	movf	(??_sprintf+10+1)&0ffh,w
+  1082  00046E  0100               	movlb	0	; () banked
+  1083  000470  0100               	movlb	0	; () banked
+  1084  000472  59F2               	subwfb	((sprintf@_val+1))&0ffh,w
+  1085  000474  B0D8               	btfsc	status,0
+  1086  000476  EF3F  F002         	goto	u271
+  1087  00047A  EF41  F002         	goto	u270
+  1088  00047E                     u271:
+  1089  00047E  EF43  F002         	goto	l553
+  1090  000482                     u270:
+  1091                           	line	1312
+  1092                           ;doprnt.c: 1312: break;
+  1093  000482  EF51  F002         	goto	l551
+  1094                           	
+  1095  000486                     l553:		; BSR set to: ?
+  1096                           
+  1097                           	line	1310
+  1098  000486  0100               	movlb	0	; () banked
+  1099  000488  0100               	movlb	0	; () banked
+  1100  00048A  2BEE               	incf	((sprintf@c))&0ffh
+  1101  00048C  0100               	movlb	0	; () banked
+  1102  00048E  0100               	movlb	0	; () banked
+  1103  000490  51EE               	movf	((sprintf@c))&0ffh,w
+  1104  000492  0A04               	xorlw	4
+  1105                           
+  1106  000494  A4D8               	btfss	status,2
+  1107  000496  EF4F  F002         	goto	u281
+  1108  00049A  EF51  F002         	goto	u280
+  1109  00049E                     u281:
+  1110  00049E  EF20  F002         	goto	l550
+  1111  0004A2                     u280:
+  1112                           	
+  1113  0004A2                     l551:		; BSR set to: ?
+  1114                           
+  1115                           	line	1466
+  1116                           ;doprnt.c: 1416: {
+  1117                           ;doprnt.c: 1463: }
+  1118                           ;doprnt.c: 1466: prec = c;
+  1119  0004A2  C0EE  F0ED         	movff	(sprintf@c),(sprintf@prec)
+  1120                           	line	1468
+  1121                           ;doprnt.c: 1468: while(prec--) {
+  1122  0004A6  EF88  F002         	goto	l554
+  1123                           	
+  1124  0004AA                     l555:		; BSR set to: ?
+  1125                           
+  1126                           	line	1498
+  1127                           ;doprnt.c: 1472: {
+  1128                           ;doprnt.c: 1498: c = "0123456789abcdef"[(_val._v
+                                 al / hexpowers[prec]) & 0xF];
+  1129  0004AA  0100               	movlb	0	; () banked
+  1130  0004AC  0100               	movlb	0	; () banked
+  1131  0004AE  51ED               	movf	((sprintf@prec))&0ffh,w
+  1132  0004B0  0D02               	mullw	02h
+  1133  0004B2  0E01               	movlw	low((_hexpowers))
+  1134  0004B4  24F3               	addwf	(prodl),c,w
+  1135  0004B6  6EF6               	movwf	tblptrl
+  1136  0004B8  6AF7               	clrf	tblptrh
+  1137  0004BA  0E03               	movlw	high((_hexpowers))
+  1138  0004BC  22F7               	addwfc	tblptrh
+  1139  0004BE  0009               	tblrd*+
+  1140                           	
+  1141  0004C0  0100               	movlb	0	; () banked
+  1142  0004C2  CFF5 F0FA          	movff	tablat,0+(?___lwdiv+02h)
+  1143  0004C6  000A               	tblrd*-
+  1144                           	
+  1145  0004C8  0100               	movlb	0	; () banked
+  1146  0004CA  CFF5 F0FB          	movff	tablat,1+(?___lwdiv+02h)
+  1147                           
+  1148  0004CE  C0F1  F0F8         	movff	(sprintf@_val),(?___lwdiv)
+  1149  0004D2  C0F2  F0F9         	movff	(sprintf@_val+1),(?___lwdiv+1)
+  1150  0004D6  EC77  F003         	call	___lwdiv	;wreg free
+  1151  0004DA  0E0F               	movlw	0Fh
+  1152  0004DC  0100               	movlb	0	; () banked
+  1153  0004DE  0100               	movlb	0	; () banked
+  1154  0004E0  17F8               	andwf	(0+?___lwdiv)&0ffh
+  1155  0004E2  0E1B               	movlw	low((STR_6))
+  1156  0004E4  0100               	movlb	0	; () banked
+  1157  0004E6  0100               	movlb	0	; () banked
+  1158  0004E8  25F8               	addwf	(0+?___lwdiv)&0ffh,w
+  1159  0004EA  6EF6               	movwf	tblptrl
+  1160  0004EC  6AF7               	clrf	tblptrh
+  1161  0004EE  0E03               	movlw	high((STR_6))
+  1162  0004F0  22F7               	addwfc	tblptrh
+  1163  0004F2  0008               	tblrd	*
+  1164                           	
+  1165  0004F4  0100               	movlb	0	; () banked
+  1166  0004F6  CFF5 F0EE          	movff	tablat,(sprintf@c)
+  1167                           	line	1515
+  1168  0004FA  C0E4  FFE9         	movff	(sprintf@sp),fsr0l
+  1169  0004FE  C0E5  FFEA         	movff	(sprintf@sp+1),fsr0h
+  1170  000502  0100               	movlb	0	; () banked
+  1171  000504  C0EE  FFEF         	movff	(sprintf@c),indf0
+  1172                           
+  1173                           ;doprnt.c: 1514: }
+  1174                           ;doprnt.c: 1515: ((*sp++ = (c)));
+  1175  000508  0100               	movlb	0	; () banked
+  1176  00050A  0100               	movlb	0	; () banked
+  1177  00050C  4BE4               	infsnz	((sprintf@sp))&0ffh
+  1178  00050E  2BE5               	incf	((sprintf@sp+1))&0ffh
+  1179                           	line	1516
+  1180                           	
+  1181  000510                     l554:		; BSR set to: ?
+  1182                           
+  1183                           	line	1468
+  1184  000510  0100               	movlb	0	; () banked
+  1185  000512  0100               	movlb	0	; () banked
+  1186  000514  07ED               	decf	((sprintf@prec))&0ffh
+  1187  000516  0100               	movlb	0	; () banked
+  1188  000518  29ED               	incf	((sprintf@prec))&0ffh,w
+  1189                           
+  1190  00051A  A4D8               	btfss	status,2
+  1191  00051C  EF92  F002         	goto	u291
+  1192  000520  EF94  F002         	goto	u290
+  1193  000524                     u291:
+  1194  000524  EF55  F002         	goto	l555
+  1195  000528                     u290:
+  1196                           	
+  1197  000528                     l556:		; BSR set to: ?
+  1198                           
+  1199                           	line	1524
+  1200                           	
+  1201  000528                     l540:		; BSR set to: ?
+  1202                           
+  1203                           	line	544
+  1204  000528  0100               	movlb	0	; () banked
+  1205  00052A  C0E6  FFF6         	movff	(sprintf@f),tblptrl
+  1206  00052E  0100               	movlb	0	; () banked
+  1207  000530  C0E7  FFF7         	movff	(sprintf@f+1),tblptrh
+  1208  000534  0100               	movlb	0	; () banked
+  1209  000536  0100               	movlb	0	; () banked
+  1210  000538  4BE6               	infsnz	((sprintf@f))&0ffh
+  1211  00053A  2BE7               	incf	((sprintf@f+1))&0ffh
+  1212  00053C  0008               	tblrd	*
+  1213                           	
+  1214  00053E  0100               	movlb	0	; () banked
+  1215  000540  CFF5 F0EE          	movff	tablat,(sprintf@c)
+  1216  000544  0100               	movlb	0	; () banked
+  1217  000546  67EE               	tstfsz	((sprintf@c))&0ffh
+  1218  000548  EFA8  F002         	goto	u301
+  1219  00054C  EFAA  F002         	goto	u300
+  1220  000550                     u301:
+  1221  000550  EFBA  F001         	goto	l541
+  1222  000554                     u300:
+  1223                           	
+  1224  000554                     l542:		; BSR set to: ?
+  1225                           
+  1226                           	line	1526
+  1227                           ;doprnt.c: 1516: }
+  1228                           ;doprnt.c: 1524: }
+  1229                           ;doprnt.c: 1526: alldone:
+  1230                           	
+  1231  000554                     l547:		; BSR set to: ?
+  1232                           
+  1233                           	line	1529
+  1234                           ;doprnt.c: 1529: *sp = 0;
+  1235  000554  C0E4  FFE9         	movff	(sprintf@sp),fsr0l
+  1236  000558  C0E5  FFEA         	movff	(sprintf@sp+1),fsr0h
+  1237  00055C  0E00               	movlw	low(0)
+  1238  00055E  6EEF               	movwf	indf0
+  1239                           	line	1531
+  1240  000560  EFB2  F002         	goto	l539
+  1241                           	line	1532
+  1242                           ;doprnt.c: 1532: }
+  1243  000564                     l539:
+  1244                           			; BSR set to: ?
+  1245                           
+  1246  000564  0012               	return
+  1247                           	opt stack 0
+  1248                           GLOBAL __end_of_sprintf
+  1249  000566                     	__end_of_sprintf:
+  1250                           	FNSIZE	_sprintf,12,8
+  1251                           ; =============== function _sprintf ends =======
+                                 =====
+  1252                           
+  1253                           	signat	_sprintf,4698
+  1254                           	global	_eusart_init
+  1255                           	global	??_eusart_init
+  1256                           	global	?_eusart_init
+  1257                           
+  1258                           ; *************** function _eusart_init ********
+                                 *********
+  1259                           ; Defined at:
+  1260                           ;		line 5 in file "G:\root\Robotics\Line Followe
+                                 r\uart.c"
+  1261                           ; Parameters:
+  1262                           ;		usart_mode     size:   1offs:   0	type: unsig
+                                 ned char 
+  1263                           ;		tx_mode        size:   1offs:   1	type: unsig
+                                 ned char 
+  1264                           ;		fosc           size:   4offs:   2	type: unsig
+                                 ned long 
+  1265                           ;		baud           size:   2offs:   6	type: unsig
+                                 ned int 
+  1266                           ; Auto variables:
+  1267                           ;		baud1       	       	type: float 
+  1268                           ; Return value:
+  1269                           ;		type: void 
+  1270                           ;		size: 0
+  1271                           ; Registers used:
+  1272                           ;		wreg, status,2, status,0
+  1273                           ; Tracked objects:
+  1274                           ;		On entry : 0/0
+  1275                           ;		On exit  : 0/0
+  1276                           ;		Unchanged: 0/0
+  1277                           ; Data sizes:
+  1278                           ;		Autos:    3
+  1279                           ;		Params:   8
+  1280                           ;		Temp:     0
+  1281                           ;		Total:   11
+  1282                           ; This function calls:
+  1283                           ;		Nothing
+  1284                           ; This function is called by:
+  1285                           ;		_main
+  1286                           ; This function uses a non-reentrant model
+  1287                           ; 
+  1288                                   psect   text5,class=CODE,space=0,reloc=2
+  1289                           
+  1290                           	opt lm
+  1291                           	file	"G:\root\Robotics\Line Follower\uart.c"
+  1292                           	line	5
+  1293  000000                     	__size_of_eusart_init	equ	__end_of_eusart_init-
+                                 _eusart_init
+  1294                           ;uart.c: 3: void eusart_init(unsigned char usart
+                                 _mode, char tx_mode,
+  1295                           ;uart.c: 4: unsigned long fosc, unsigned int bau
+                                 d)
+  1296                           ;uart.c: 5: {
+  1297                           	
+  1298  00098C                     _eusart_init:		; BSR set to: ?
+  1299                           
+  1300                           	opt stack 30
+  1301                           	line	6
+  1302  00098C  0E9A               	movlw	low(float24(2.3999999999999999))
+  1303  00098E  0100               	movlb	0	; () banked
+  1304  000990  0100               	movlb	0	; () banked
+  1305  000992  6FEC               	movwf	((eusart_init@baud1))&0ffh
+  1306  000994  0E19               	movlw	high(float24(2.3999999999999999))
+  1307  000996  0100               	movlb	0	; () banked
+  1308  000998  0100               	movlb	0	; () banked
+  1309  00099A  6FED               	movwf	((eusart_init@baud1+1))&0ffh
+  1310  00099C  0E40               	movlw	low highword(float24(2.3999999999999999))
+  1311  00099E  0100               	movlb	0	; () banked
+  1312  0009A0  0100               	movlb	0	; () banked
+  1313  0009A2  6FEE               	movwf	((eusart_init@baud1+2))&0ffh
+  1314                           
+  1315                           	line	7
+  1316                           ;uart.c: 7: TRISC = 0xC0;
+  1317  0009A4  0EC0               	movlw	low(0C0h)
+  1318  0009A6  6E94               	movwf	((c:3988)),c	;volatile
+  1319                           	line	8
+  1320                           ;uart.c: 8: switch(usart_mode)
+  1321  0009A8  EFE2  F004         	goto	l510
+  1322                           	line	10
+  1323                           ;uart.c: 9: {
+  1324                           ;uart.c: 10: case 0:
+  1325                           	
+  1326  0009AC                     l511:		; BSR set to: ?
+  1327                           
+  1328                           	line	12
+  1329                           ;uart.c: 11: {
+  1330                           ;uart.c: 12: BAUDCTL = 0x08;
+  1331  0009AC  0E08               	movlw	low(08h)
+  1332  0009AE  6EAA               	movwf	((c:4010)),c	;volatile
+  1333                           	line	13
+  1334                           ;uart.c: 13: SPBRG = 0x33;
+  1335  0009B0  0E33               	movlw	low(033h)
+  1336  0009B2  6EAF               	movwf	((c:4015)),c	;volatile
+  1337                           	line	14
+  1338                           ;uart.c: 14: RCSTA = 0x90;
+  1339  0009B4  0E90               	movlw	low(090h)
+  1340  0009B6  6EAB               	movwf	((c:4011)),c	;volatile
+  1341                           	line	15
+  1342                           ;uart.c: 15: TXSTA = 0x24;
+  1343  0009B8  0E24               	movlw	low(024h)
+  1344  0009BA  6EAC               	movwf	((c:4012)),c	;volatile
+  1345                           	line	16
+  1346                           ;uart.c: 16: break;
+  1347  0009BC  EFED  F004         	goto	l509
+  1348                           	line	18
+  1349                           ;uart.c: 17: }
+  1350                           ;uart.c: 18: case 1:
+  1351                           	
+  1352  0009C0                     l512:		; BSR set to: ?
+  1353                           
+  1354                           	line	20
+  1355                           ;uart.c: 19: {
+  1356                           ;uart.c: 20: break;
+  1357  0009C0  EFED  F004         	goto	l509
+  1358                           	line	8
+  1359                           	
+  1360  0009C4                     l510:		; BSR set to: ?
+  1361                           
+  1362  0009C4  0100               	movlb	0	; () banked
+  1363  0009C6  0100               	movlb	0	; () banked
+  1364  0009C8  51E4               	movf	((eusart_init@usart_mode))&0ffh,w
+  1365  0009CA  0A00               	xorlw	0 ^ 0
+  1366  0009CC  E0EF               	bz	l511
+  1367  0009CE  0A01               	xorlw	1 ^ 0
+  1368  0009D0  E0F7               	bz	l512
+  1369  0009D2  0A03               	xorlw	2 ^ 1
+  1370  0009D4  E0F5               	bz	l512
+  1371  0009D6  EFED  F004         	goto	l509
+  1372                           
+  1373                           	line	26
+  1374                           	
+  1375  0009DA                     l509:		; BSR set to: ?
+  1376                           
+  1377                           	line	27
+  1378                           ;uart.c: 27: }
+  1379  0009DA                     l508:
+  1380                           			; BSR set to: ?
+  1381                           
+  1382  0009DA  0012               	return
+  1383                           	opt stack 0
+  1384                           GLOBAL __end_of_eusart_init
+  1385  0009DC                     	__end_of_eusart_init:
+  1386                           	FNSIZE	_eusart_init,3,8
+  1387                           ; =============== function _eusart_init ends ===
+                                 =========
+  1388                           
+  1389                           	signat	_eusart_init,16504
+  1390                           	global	_init
+  1391                           	global	??_init
+  1392                           	global	?_init
+  1393                           
+  1394                           ; *************** function _init ***************
+                                 **
+  1395                           ; Defined at:
+  1396                           ;		line 74 in file "G:\root\Robotics\Line Follow
+                                 er\linefollower_main.c"
+  1397                           ; Parameters:
+  1398                           ;		None
+  1399                           ; Auto variables:
+  1400                           ;		None
+  1401                           ; Return value:
+  1402                           ;		type: int 
+  1403                           ;		size: 2
+  1404                           ; Registers used:
+  1405                           ;		wreg, status,2
+  1406                           ; Tracked objects:
+  1407                           ;		On entry : 0/0
+  1408                           ;		On exit  : 0/0
+  1409                           ;		Unchanged: 0/0
+  1410                           ; Data sizes:
+  1411                           ;		Autos:    0
+  1412                           ;		Params:   0
+  1413                           ;		Temp:     0
+  1414                           ;		Total:    0
+  1415                           ; This function calls:
+  1416                           ;		Nothing
+  1417                           ; This function is called by:
+  1418                           ;		_main
+  1419                           ; This function uses a non-reentrant model
+  1420                           ; 
+  1421                                   psect   text6,class=CODE,space=0,reloc=2
+  1422                           
+  1423                           	opt lm
+  1424                           	file	"G:\root\Robotics\Line Follower\linefollow
+                                 er_main.c"
+  1425                           	line	74
+  1426  000000                     	__size_of_init	equ	__end_of_init-_init
+  1427                           ;linefollower_main.c: 73: int init(void)
+  1428                           ;linefollower_main.c: 74: {
+  1429                           	
+  1430  000A76                     _init:		; BSR set to: ?
+  1431                           
+  1432                           	opt stack 30
+  1433                           	line	76
+  1434  000A76  0E73               	movlw	low(073h)
+  1435  000A78  6ED3               	movwf	((c:4051)),c	;volatile
+  1436                           	line	79
+  1437                           ;linefollower_main.c: 79: PORTB = 0x00;
+  1438  000A7A  0E00               	movlw	low(0)
+  1439  000A7C  6E81               	movwf	((c:3969)),c	;volatile
+  1440                           	line	80
+  1441                           ;linefollower_main.c: 80: TRISB = 0x00;
+  1442  000A7E  0E00               	movlw	low(0)
+  1443  000A80  6E93               	movwf	((c:3987)),c	;volatile
+  1444                           	line	83
+  1445                           ;linefollower_main.c: 83: TRISD =0xFF;
+  1446  000A82  6895               	setf	((c:3989)),c	;volatile
+  1447                           	line	84
+  1448                           ;linefollower_main.c: 84: PORTD =0xFF;
+  1449  000A84  6883               	setf	((c:3971)),c	;volatile
+  1450                           	line	94
+  1451  000A86  EF45  F005         	goto	l256
+  1452                           	line	95
+  1453                           ;linefollower_main.c: 95: }
+  1454  000A8A                     l256:
+  1455                           			; BSR set to: ?
+  1456                           
+  1457  000A8A  0012               	return
+  1458                           	opt stack 0
+  1459                           GLOBAL __end_of_init
+  1460  000A8C                     	__end_of_init:
+  1461                           	FNSIZE	_init,0,0
+  1462                           ; =============== function _init ends ==========
+                                 ==
+  1463                           
+  1464                           	signat	_init,90
+  1465                           	global	_toggleLed
+  1466                           	global	??_toggleLed
+  1467                           	global	?_toggleLed
+  1468                           
+  1469                           ; *************** function _toggleLed **********
+                                 *******
+  1470                           ; Defined at:
+  1471                           ;		line 16 in file "G:\root\Robotics\Line Follow
+                                 er\linefollower_main.c"
+  1472                           ; Parameters:
+  1473                           ;		None
+  1474                           ; Auto variables:
+  1475                           ;		None
+  1476                           ; Return value:
+  1477                           ;		type: int 
+  1478                           ;		size: 2
+  1479                           ; Registers used:
+  1480                           ;		wreg, status,2, status,0, cstack
+  1481                           ; Tracked objects:
+  1482                           ;		On entry : 0/0
+  1483                           ;		On exit  : 0/0
+  1484                           ;		Unchanged: 0/0
+  1485                           ; Data sizes:
+  1486                           ;		Autos:    0
+  1487                           ;		Params:   0
+  1488                           ;		Temp:     0
+  1489                           ;		Total:    0
+  1490                           ; This function calls:
+  1491                           ;		_delay
+  1492                           ; This function is called by:
+  1493                           ;		_main
+  1494                           ; This function uses a non-reentrant model
+  1495                           ; 
+  1496                                   psect   text7,class=CODE,space=0,reloc=2
+  1497                           
+  1498                           	opt lm
+  1499                           	file	"G:\root\Robotics\Line Follower\linefollow
+                                 er_main.c"
+  1500                           	line	16
+  1501  000000                     	__size_of_toggleLed	equ	__end_of_toggleLed-_tog
+                                 gleLed
+  1502                           ;linefollower_main.c: 15: int toggleLed(void)
+  1503                           ;linefollower_main.c: 16: {
+  1504                           	
+  1505  000A24                     _toggleLed:		; BSR set to: ?
+  1506                           
+  1507                           	opt stack 30
+  1508                           	line	17
+  1509  000A24  0E00               	movlw	low(0)
+  1510  000A26  6E81               	movwf	((c:3969)),c	;volatile
+  1511                           	line	20
+  1512                           ;linefollower_main.c: 19: {
+  1513                           ;linefollower_main.c: 20: PORTB = 0xAA;
+  1514  000A28  0EAA               	movlw	low(0AAh)
+  1515  000A2A  6E81               	movwf	((c:3969)),c	;volatile
+  1516                           	line	21
+  1517                           ;linefollower_main.c: 21: delay(200);
+  1518  000A2C  0EC8               	movlw	low(0C8h)
+  1519  000A2E  0100               	movlb	0	; () banked
+  1520  000A30  0100               	movlb	0	; () banked
+  1521  000A32  6FE4               	movwf	((?_delay))&0ffh
+  1522  000A34  0E00               	movlw	high(0C8h)
+  1523  000A36  0100               	movlb	0	; () banked
+  1524  000A38  6FE5               	movwf	((?_delay+1))&0ffh
+  1525  000A3A  ECDF  F003         	call	_delay	;wreg free
+  1526                           	line	22
+  1527                           ;linefollower_main.c: 22: PORTB =0x00;
+  1528  000A3E  0E00               	movlw	low(0)
+  1529  000A40  6E81               	movwf	((c:3969)),c	;volatile
+  1530                           	line	23
+  1531                           ;linefollower_main.c: 23: delay(200);
+  1532  000A42  0EC8               	movlw	low(0C8h)
+  1533  000A44  0100               	movlb	0	; () banked
+  1534  000A46  0100               	movlb	0	; () banked
+  1535  000A48  6FE4               	movwf	((?_delay))&0ffh
+  1536  000A4A  0E00               	movlw	high(0C8h)
+  1537  000A4C  0100               	movlb	0	; () banked
+  1538  000A4E  6FE5               	movwf	((?_delay+1))&0ffh
+  1539  000A50  ECDF  F003         	call	_delay	;wreg free
+  1540                           	line	24
+  1541                           	
+  1542  000A54                     l254:		; BSR set to: ?
+  1543                           
+  1544                           	line	25
+  1545  000A54  EF2C  F005         	goto	l253
+  1546                           	line	26
+  1547                           ;linefollower_main.c: 26: }
+  1548  000A58                     l253:
+  1549                           			; BSR set to: ?
+  1550                           
+  1551  000A58  0012               	return
+  1552                           	opt stack 0
+  1553                           GLOBAL __end_of_toggleLed
+  1554  000A5A                     	__end_of_toggleLed:
+  1555                           	FNSIZE	_toggleLed,0,0
+  1556                           ; =============== function _toggleLed ends =====
+                                 =======
+  1557                           
+  1558                           	signat	_toggleLed,90
+  1559                           	global	_delay
+  1560                           	global	??_delay
+  1561                           	global	?_delay
+  1562                           
+  1563                           ; *************** function _delay **************
+                                 ***
+  1564                           ; Defined at:
+  1565                           ;		line 5 in file "G:\root\Robotics\Line Followe
+                                 r\linefollower_main.c"
+  1566                           ; Parameters:
+  1567                           ;		cnt            size:   2offs:   0	type: int 
+  1568                           ; Auto variables:
+  1569                           ;		i           	       	type: int 
+  1570                           ;		j           	       	type: int 
+  1571                           ; Return value:
+  1572                           ;		type: int 
+  1573                           ;		size: 2
+  1574                           ; Registers used:
+  1575                           ;		wreg, status,2, status,0
+  1576                           ; Tracked objects:
+  1577                           ;		On entry : 0/0
+  1578                           ;		On exit  : 0/0
+  1579                           ;		Unchanged: 0/0
+  1580                           ; Data sizes:
+  1581                           ;		Autos:    4
+  1582                           ;		Params:   2
+  1583                           ;		Temp:     1
+  1584                           ;		Total:    7
+  1585                           ; This function calls:
+  1586                           ;		Nothing
+  1587                           ; This function is called by:
+  1588                           ;		_toggleLed
+  1589                           ;		_main
+  1590                           ; This function uses a non-reentrant model
+  1591                           ; 
+  1592                                   psect   text8,class=CODE,space=0,reloc=2
+  1593                           
+  1594                           	opt lm
+  1595                           	file	"G:\root\Robotics\Line Follower\linefollow
+                                 er_main.c"
+  1596                           	line	5
+  1597  000000                     	__size_of_delay	equ	__end_of_delay-_delay
+  1598                           ;linefollower_main.c: 4: int delay(int cnt)
+  1599                           ;linefollower_main.c: 5: {
+  1600                           	
+  1601  0007BE                     _delay:		; BSR set to: ?
+  1602                           
+  1603                           	opt stack 29
+  1604                           	line	6
+  1605  0007BE  0E00               	movlw	low(0)
+  1606  0007C0  0100               	movlb	0	; () banked
+  1607  0007C2  0100               	movlb	0	; () banked
+  1608  0007C4  6FE6               	movwf	((delay@i))&0ffh
+  1609  0007C6  0E00               	movlw	high(0)
+  1610  0007C8  0100               	movlb	0	; () banked
+  1611  0007CA  6FE7               	movwf	((delay@i+1))&0ffh
+  1612  0007CC  0E00               	movlw	low(0)
+  1613  0007CE  0100               	movlb	0	; () banked
+  1614  0007D0  0100               	movlb	0	; () banked
+  1615  0007D2  6FE8               	movwf	((delay@j))&0ffh
+  1616  0007D4  0E00               	movlw	high(0)
+  1617  0007D6  0100               	movlb	0	; () banked
+  1618  0007D8  6FE9               	movwf	((delay@j+1))&0ffh
+  1619                           	line	7
+  1620                           ;linefollower_main.c: 7: for(i =0;i<cnt;i++)
+  1621  0007DA  0E00               	movlw	low(0)
+  1622  0007DC  0100               	movlb	0	; () banked
+  1623  0007DE  0100               	movlb	0	; () banked
+  1624  0007E0  6FE6               	movwf	((delay@i))&0ffh
+  1625  0007E2  0E00               	movlw	high(0)
+  1626  0007E4  0100               	movlb	0	; () banked
+  1627  0007E6  6FE7               	movwf	((delay@i+1))&0ffh
+  1628  0007E8  EF1F  F004         	goto	l248
+  1629                           	line	8
+  1630                           	
+  1631  0007EC                     l245:		; BSR set to: ?
+  1632                           
+  1633                           	line	9
+  1634                           ;linefollower_main.c: 8: {
+  1635                           ;linefollower_main.c: 9: for(j=0;j<cnt;j++)
+  1636  0007EC  0E00               	movlw	low(0)
+  1637  0007EE  0100               	movlb	0	; () banked
+  1638  0007F0  0100               	movlb	0	; () banked
+  1639  0007F2  6FE8               	movwf	((delay@j))&0ffh
+  1640  0007F4  0E00               	movlw	high(0)
+  1641  0007F6  0100               	movlb	0	; () banked
+  1642  0007F8  6FE9               	movwf	((delay@j+1))&0ffh
+  1643  0007FA  EF03  F004         	goto	l252
+  1644                           	line	10
+  1645                           	
+  1646  0007FE                     l249:		; BSR set to: ?
+  1647                           
+  1648                           	line	9
+  1649                           ;linefollower_main.c: 10: {
+  1650  0007FE  0100               	movlb	0	; () banked
+  1651  000800  0100               	movlb	0	; () banked
+  1652  000802  4BE8               	infsnz	((delay@j))&0ffh
+  1653  000804  2BE9               	incf	((delay@j+1))&0ffh
+  1654                           	
+  1655  000806                     l252:		; BSR set to: ?
+  1656                           
+  1657  000806  0100               	movlb	0	; () banked
+  1658  000808  0100               	movlb	0	; () banked
+  1659  00080A  51E9               	movf	((delay@j+1))&0ffh,w
+  1660  00080C  0A80               	xorlw	80h
+  1661  00080E  0100               	movlb	0	; () banked
+  1662  000810  6FEA               	movwf	(??_delay+4+0)&0ffh
+  1663  000812  0100               	movlb	0	; () banked
+  1664  000814  51E4               	movf	((delay@cnt))&0ffh,w
+  1665  000816  0100               	movlb	0	; () banked
+  1666  000818  0100               	movlb	0	; () banked
+  1667  00081A  5DE8               	subwf	((delay@j))&0ffh,w
+  1668  00081C  0100               	movlb	0	; () banked
+  1669  00081E  0100               	movlb	0	; () banked
+  1670  000820  51E5               	movf	((delay@cnt+1))&0ffh,w
+  1671  000822  0A80               	xorlw	80h
+  1672  000824  0100               	movlb	0	; () banked
+  1673  000826  59EA               	subwfb	(??_delay+4+0)&0ffh,w
+  1674  000828  A0D8               	btfss	status,0
+  1675  00082A  EF19  F004         	goto	u181
+  1676  00082E  EF1B  F004         	goto	u180
+  1677  000832                     u181:
+  1678  000832  EFFF  F003         	goto	l249
+  1679  000836                     u180:
+  1680                           	
+  1681  000836                     l250:		; BSR set to: ?
+  1682                           
+  1683                           	line	7
+  1684  000836  0100               	movlb	0	; () banked
+  1685  000838  0100               	movlb	0	; () banked
+  1686  00083A  4BE6               	infsnz	((delay@i))&0ffh
+  1687  00083C  2BE7               	incf	((delay@i+1))&0ffh
+  1688                           	
+  1689  00083E                     l248:		; BSR set to: ?
+  1690                           
+  1691  00083E  0100               	movlb	0	; () banked
+  1692  000840  0100               	movlb	0	; () banked
+  1693  000842  51E7               	movf	((delay@i+1))&0ffh,w
+  1694  000844  0A80               	xorlw	80h
+  1695  000846  0100               	movlb	0	; () banked
+  1696  000848  6FEA               	movwf	(??_delay+4+0)&0ffh
+  1697  00084A  0100               	movlb	0	; () banked
+  1698  00084C  51E4               	movf	((delay@cnt))&0ffh,w
+  1699  00084E  0100               	movlb	0	; () banked
+  1700  000850  0100               	movlb	0	; () banked
+  1701  000852  5DE6               	subwf	((delay@i))&0ffh,w
+  1702  000854  0100               	movlb	0	; () banked
+  1703  000856  0100               	movlb	0	; () banked
+  1704  000858  51E5               	movf	((delay@cnt+1))&0ffh,w
+  1705  00085A  0A80               	xorlw	80h
+  1706  00085C  0100               	movlb	0	; () banked
+  1707  00085E  59EA               	subwfb	(??_delay+4+0)&0ffh,w
+  1708  000860  A0D8               	btfss	status,0
+  1709  000862  EF35  F004         	goto	u191
+  1710  000866  EF37  F004         	goto	u190
+  1711  00086A                     u191:
+  1712  00086A  EFF6  F003         	goto	l245
+  1713  00086E                     u190:
+  1714                           	
+  1715  00086E                     l246:		; BSR set to: ?
+  1716                           
+  1717                           	line	13
+  1718  00086E  EF39  F004         	goto	l244
+  1719                           	line	14
+  1720                           ;linefollower_main.c: 14: }
+  1721  000872                     l244:
+  1722                           			; BSR set to: ?
+  1723                           
+  1724  000872  0012               	return
+  1725                           	opt stack 0
+  1726                           GLOBAL __end_of_delay
+  1727  000874                     	__end_of_delay:
+  1728                           	FNSIZE	_delay,5,2
+  1729                           ; =============== function _delay ends =========
+                                 ===
+  1730                           
+  1731                           	signat	_delay,4218
+  1732                           	global	___lwdiv
+  1733                           	global	??___lwdiv
+  1734                           	global	?___lwdiv
+  1735                           
+  1736                           ; *************** function ___lwdiv ************
+                                 *****
+  1737                           ; Defined at:
+  1738                           ;		line 5 in file "C:\Program Files\HI-TECH Soft
+                                 ware\PICC-18\PRO\9.66\sources\lwdiv.c"
+  1739                           ; Parameters:
+  1740                           ;		dividend       size:   2offs:   0	type: unsig
+                                 ned int 
+  1741                           ;		divisor        size:   2offs:   2	type: unsig
+                                 ned int 
+  1742                           ; Auto variables:
+  1743                           ;		counter     	       	type: unsigned char 
+  1744                           ;		quotient    	       	type: unsigned int 
+  1745                           ; Return value:
+  1746                           ;		type: unsigned int 
+  1747                           ;		size: 2
+  1748                           ; Registers used:
+  1749                           ;		wreg, status,2, status,0
+  1750                           ; Tracked objects:
+  1751                           ;		On entry : 0/0
+  1752                           ;		On exit  : 0/0
+  1753                           ;		Unchanged: 0/0
+  1754                           ; Data sizes:
+  1755                           ;		Autos:    3
+  1756                           ;		Params:   4
+  1757                           ;		Temp:     1
+  1758                           ;		Total:    8
+  1759                           ; This function calls:
+  1760                           ;		Nothing
+  1761                           ; This function is called by:
+  1762                           ;		_sprintf
+  1763                           ; This function uses a non-reentrant model
+  1764                           ; 
+  1765                                   psect   text9,class=CODE,space=0,reloc=2
+  1766                           
+  1767                           	opt lm
+  1768                           	file	"C:\Program Files\HI-TECH Software\PICC-18
+                                 \PRO\9.66\sources\lwdiv.c"
+  1769                           	line	5
+  1770  000000                     	__size_of___lwdiv	equ	__end_of___lwdiv-___lwdiv
+  1771                           	
+  1772  0006EE                     ___lwdiv:		; BSR set to: ?
+  1773                           
+  1774                           	opt stack 29
+  1775                           	line	9
+  1776  0006EE  0E00               	movlw	low(0)
+  1777  0006F0  0100               	movlb	0	; () banked
+  1778  0006F2  0100               	movlb	0	; () banked
+  1779  0006F4  6FFD               	movwf	((___lwdiv@quotient))&0ffh
+  1780  0006F6  0E00               	movlw	high(0)
+  1781  0006F8  0100               	movlb	0	; () banked
+  1782  0006FA  6FFE               	movwf	((___lwdiv@quotient+1))&0ffh
+  1783                           	line	10
+  1784  0006FC  0100               	movlb	0	; () banked
+  1785  0006FE  0100               	movlb	0	; () banked
+  1786  000700  51FB               	movf	((___lwdiv@divisor+1))&0ffh,w
+  1787  000702  11FA               	iorwf ((___lwdiv@divisor))&0ffh,w
+  1788                           
+  1789  000704  B4D8               	btfsc	status,2
+  1790  000706  EF87  F003         	goto	u971
+  1791  00070A  EF89  F003         	goto	u970
+  1792  00070E                     u971:
+  1793  00070E  EFD8  F003         	goto	l876
+  1794  000712                     u970:
+  1795                           	line	11
+  1796  000712  0100               	movlb	0	; () banked
+  1797  000714  6FFF               	movwf	(??___lwdiv+3+0)&0ffh
+  1798  000716  0E01               	movlw	low(01h)
+  1799  000718  0100               	movlb	0	; () banked
+  1800  00071A  0100               	movlb	0	; () banked
+  1801  00071C  6FFC               	movwf	((___lwdiv@counter))&0ffh
+  1802  00071E  0100               	movlb	0	; () banked
+  1803  000720  51FF               	movf	(??___lwdiv+3+0)&0ffh,w
+  1804                           	line	12
+  1805  000722  EF9C  F003         	goto	l877
+  1806                           	
+  1807  000726                     l878:		; BSR set to: ?
+  1808                           
+  1809                           	line	13
+  1810  000726  0100               	movlb	0	; () banked
+  1811  000728  90D8               	bcf	status,0
+  1812  00072A  0100               	movlb	0	; () banked
+  1813  00072C  37FA               	rlcf	((___lwdiv@divisor))&0ffh
+  1814  00072E  0100               	movlb	0	; () banked
+  1815  000730  37FB               	rlcf	((___lwdiv@divisor+1))&0ffh
+  1816                           	line	14
+  1817  000732  0100               	movlb	0	; () banked
+  1818  000734  0100               	movlb	0	; () banked
+  1819  000736  2BFC               	incf	((___lwdiv@counter))&0ffh
+  1820                           	line	15
+  1821                           	
+  1822  000738                     l877:		; BSR set to: ?
+  1823                           
+  1824                           	line	12
+  1825  000738  0100               	movlb	0	; () banked
+  1826                           	
+  1827  00073A  0100               	movlb	0	; () banked
+  1828  00073C  AFFB               	btfss	((___lwdiv@divisor+1))&0ffh,(15)&7
+  1829  00073E  EFA3  F003         	goto	u981
+  1830  000742  EFA5  F003         	goto	u980
+  1831  000746                     u981:
+  1832  000746  EF93  F003         	goto	l878
+  1833  00074A                     u980:
+  1834                           	
+  1835  00074A                     l879:		; BSR set to: ?
+  1836                           
+  1837                           	line	16
+  1838                           	
+  1839  00074A                     l882:		; BSR set to: ?
+  1840                           
+  1841                           	line	17
+  1842  00074A  0100               	movlb	0	; () banked
+  1843  00074C  90D8               	bcf	status,0
+  1844  00074E  0100               	movlb	0	; () banked
+  1845  000750  37FD               	rlcf	((___lwdiv@quotient))&0ffh
+  1846  000752  0100               	movlb	0	; () banked
+  1847  000754  37FE               	rlcf	((___lwdiv@quotient+1))&0ffh
+  1848                           	line	18
+  1849  000756  0100               	movlb	0	; () banked
+  1850  000758  0100               	movlb	0	; () banked
+  1851  00075A  51FA               	movf	((___lwdiv@divisor))&0ffh,w
+  1852  00075C  0100               	movlb	0	; () banked
+  1853  00075E  0100               	movlb	0	; () banked
+  1854  000760  5DF8               	subwf	((___lwdiv@dividend))&0ffh,w
+  1855  000762  0100               	movlb	0	; () banked
+  1856  000764  0100               	movlb	0	; () banked
+  1857  000766  51FB               	movf	((___lwdiv@divisor+1))&0ffh,w
+  1858  000768  0100               	movlb	0	; () banked
+  1859  00076A  0100               	movlb	0	; () banked
+  1860  00076C  59F9               	subwfb	((___lwdiv@dividend+1))&0ffh,w
+  1861  00076E  A0D8               	btfss	status,0
+  1862  000770  EFBC  F003         	goto	u991
+  1863  000774  EFBE  F003         	goto	u990
+  1864  000778                     u991:
+  1865  000778  EFCD  F003         	goto	l883
+  1866  00077C                     u990:
+  1867                           	line	19
+  1868  00077C  0100               	movlb	0	; () banked
+  1869  00077E  0100               	movlb	0	; () banked
+  1870  000780  51FA               	movf	((___lwdiv@divisor))&0ffh,w
+  1871  000782  0100               	movlb	0	; () banked
+  1872  000784  0100               	movlb	0	; () banked
+  1873  000786  5FF8               	subwf	((___lwdiv@dividend))&0ffh
+  1874  000788  0100               	movlb	0	; () banked
+  1875  00078A  0100               	movlb	0	; () banked
+  1876  00078C  51FB               	movf	((___lwdiv@divisor+1))&0ffh,w
+  1877  00078E  0100               	movlb	0	; () banked
+  1878  000790  0100               	movlb	0	; () banked
+  1879  000792  5BF9               	subwfb	((___lwdiv@dividend+1))&0ffh
+  1880                           
+  1881                           	line	20
+  1882  000794  0100               	movlb	0	; () banked
+  1883  000796  0100               	movlb	0	; () banked
+  1884  000798  81FD               	bsf	(0+(0/8)+(___lwdiv@quotient))&0ffh,(0)&7
+  1885                           	line	21
+  1886                           	
+  1887  00079A                     l883:		; BSR set to: ?
+  1888                           
+  1889                           	line	22
+  1890  00079A  0100               	movlb	0	; () banked
+  1891  00079C  90D8               	bcf	status,0
+  1892  00079E  0100               	movlb	0	; () banked
+  1893  0007A0  33FB               	rrcf	((___lwdiv@divisor+1))&0ffh
+  1894  0007A2  0100               	movlb	0	; () banked
+  1895  0007A4  33FA               	rrcf	((___lwdiv@divisor))&0ffh
+  1896                           	line	23
+  1897  0007A6  0100               	movlb	0	; () banked
+  1898  0007A8  0100               	movlb	0	; () banked
+  1899  0007AA  2FFC               	decfsz	((___lwdiv@counter))&0ffh
+  1900                           	
+  1901  0007AC  EFA5  F003         	goto	l882
+  1902                           	
+  1903  0007B0                     l881:		; BSR set to: ?
+  1904                           
+  1905                           	line	24
+  1906                           	
+  1907  0007B0                     l876:		; BSR set to: ?
+  1908                           
+  1909                           	line	25
+  1910  0007B0  C0FD  F0F8         	movff	(___lwdiv@quotient),(?___lwdiv)
+  1911  0007B4  C0FE  F0F9         	movff	(___lwdiv@quotient+1),(?___lwdiv+1)
+  1912  0007B8  EFDE  F003         	goto	l875
+  1913                           	line	26
+  1914  0007BC                     l875:
+  1915                           			; BSR set to: ?
+  1916                           
+  1917  0007BC  0012               	return
+  1918                           	opt stack 0
+  1919                           GLOBAL __end_of___lwdiv
+  1920  0007BE                     	__end_of___lwdiv:
+  1921                           	FNSIZE	___lwdiv,4,4
+  1922                           ; =============== function ___lwdiv ends =======
+                                 =====
+  1923                           
+  1924                           	signat	___lwdiv,8314
+  1925                           	global	_uart_send_byte
+  1926                           	global	??_uart_send_byte
+  1927                           	global	?_uart_send_byte
+  1928                           
+  1929                           ; *************** function _uart_send_byte *****
+                                 ************
+  1930                           ; Defined at:
+  1931                           ;		line 30 in file "G:\root\Robotics\Line Follow
+                                 er\uart.c"
+  1932                           ; Parameters:
+  1933                           ;		byte           size:   1offs:   0	type: unsig
+                                 ned char 
+  1934                           ; Auto variables:
+  1935                           ;		None
+  1936                           ; Return value:
+  1937                           ;		type: void 
+  1938                           ;		size: 0
+  1939                           ; Registers used:
+  1940                           ;		None
+  1941                           ; Tracked objects:
+  1942                           ;		On entry : 0/0
+  1943                           ;		On exit  : 0/0
+  1944                           ;		Unchanged: 0/0
+  1945                           ; Data sizes:
+  1946                           ;		Autos:    0
+  1947                           ;		Params:   1
+  1948                           ;		Temp:     0
+  1949                           ;		Total:    1
+  1950                           ; This function calls:
+  1951                           ;		Nothing
+  1952                           ; This function is called by:
+  1953                           ;		_uart_send_pkt
+  1954                           ; This function uses a non-reentrant model
+  1955                           ; 
+  1956                                   psect   text10,class=CODE,space=0,reloc=
+                                 2
+  1957                           
+  1958                           	opt lm
+  1959                           	file	"G:\root\Robotics\Line Follower\uart.c"
+  1960                           	line	30
+  1961  000000                     	__size_of_uart_send_byte	equ	__end_of_uart_send
+                                 _byte-_uart_send_byte
+  1962                           ;uart.c: 29: void uart_send_byte(unsigned char b
+                                 yte)
+  1963                           ;uart.c: 30: {
+  1964                           	
+  1965  000A5A                     _uart_send_byte:		; BSR set to: ?
+  1966                           
+  1967                           	opt stack 29
+  1968                           	line	31
+  1969  000A5A  EF31  F005         	goto	l515
+  1970                           	
+  1971  000A5E                     l516:		; BSR set to: ?
+  1972                           
+  1973                           	line	33
+  1974                           ;uart.c: 32: {
+  1975                           ;uart.c: 33: continue;
+  1976  000A5E  EF31  F005         	goto	l515
+  1977                           	line	34
+  1978                           	
+  1979  000A62                     l515:		; BSR set to: ?
+  1980                           
+  1981                           	line	31
+  1982  000A62  A89E               	btfss	c:(31988/8),(31988)&7	;volatile
+  1983  000A64  EF36  F005         	goto	u211
+  1984  000A68  EF38  F005         	goto	u210
+  1985  000A6C                     u211:
+  1986  000A6C  EF2F  F005         	goto	l516
+  1987  000A70                     u210:
+  1988                           	
+  1989  000A70                     l517:		; BSR set to: ?
+  1990                           
+  1991                           	line	36
+  1992                           ;uart.c: 34: }
+  1993                           ;uart.c: 36: TXREG = byte;
+  1994  000A70  C0EE  FFAD         	movff	(uart_send_byte@byte),(c:4013)	;volatile
+  1995                           	line	37
+  1996                           ;uart.c: 37: }
+  1997  000A74                     l514:
+  1998                           			; BSR set to: ?
+  1999                           
+  2000  000A74  0012               	return
+  2001                           	opt stack 0
+  2002                           GLOBAL __end_of_uart_send_byte
+  2003  000A76                     	__end_of_uart_send_byte:
+  2004                           	FNSIZE	_uart_send_byte,0,1
+  2005                           ; =============== function _uart_send_byte ends 
+                                 ============
+  2006                           
+  2007                           	signat	_uart_send_byte,4216
+  2008                           	FNCALL	_main,_init
+  2009                           	FNCALL	_main,_eusart_init
+  2010                           	FNCALL	_main,_toggleLed
+  2011                           	FNCALL	_main,_uart_send_pkt
+  2012                           	FNCALL	_main,_delay
+  2013                           	FNCALL	_main,_memset
+  2014                           	FNCALL	_main,_sprintf
+  2015                           	FNCALL	_main,_strlen
+  2016                           	FNCALL	_uart_send_pkt,_uart_send_byte
+  2017                           	FNCALL	_sprintf,___lwdiv
+  2018                           	FNCALL	_toggleLed,_delay
+  2019                           	FNROOT	_main
+  2020                           ;	FNARG	_uart_send_pkt,_strlen
+  2021                                   psect   smallconst,class=SMALLCONST,spac
+                                 e=0,reloc=2
+  2022  000300  00                 	db	0	;reserve
+  2023                           	global	_hexpowers
+  2024                           	file	"C:\Program Files\HI-TECH Software\PICC-18
+                                 \PRO\9.66\lib\doprnt.c"
+  2025                           	line	362
+  2026  000301                     _hexpowers:
+  2027  000301  0001               	dw	(01h)&0ffffh
+  2028  000303  0010               	dw	(010h)&0ffffh
+  2029  000305  0100               	dw	(0100h)&0ffffh
+  2030  000307  1000               	dw	(01000h)&0ffffh
+  2031                           	global	_hexpowers
+  2032                           	global	_ADCON0
+  2033  000000                     _ADCON0	equ	0xFC2
+  2034                           	global	_ADCON2
+  2035  000000                     _ADCON2	equ	0xFC0
+  2036                           	global	_ADRESH
+  2037  000000                     _ADRESH	equ	0xFC4
+  2038                           	global	_ADRESL
+  2039  000000                     _ADRESL	equ	0xFC3
+  2040                           	global	_ANSEL0
+  2041  000000                     _ANSEL0	equ	0xFB8
+  2042                           	global	_ANSEL1
+  2043  000000                     _ANSEL1	equ	0xFB9
+  2044                           	global	_BAUDCTL
+  2045  000000                     _BAUDCTL	equ	0xFAA
+  2046                           	global	_OSCCON
+  2047  000000                     _OSCCON	equ	0xFD3
+  2048                           	global	_PORTB
+  2049  000000                     _PORTB	equ	0xF81
+  2050                           	global	_PORTD
+  2051  000000                     _PORTD	equ	0xF83
+  2052                           	global	_RCREG
+  2053  000000                     _RCREG	equ	0xFAE
+  2054                           	global	_RCSTA
+  2055  000000                     _RCSTA	equ	0xFAB
+  2056                           	global	_SPBRG
+  2057  000000                     _SPBRG	equ	0xFAF
+  2058                           	global	_TRISA
+  2059  000000                     _TRISA	equ	0xF92
+  2060                           	global	_TRISB
+  2061  000000                     _TRISB	equ	0xF93
+  2062                           	global	_TRISC
+  2063  000000                     _TRISC	equ	0xF94
+  2064                           	global	_TRISD
+  2065  000000                     _TRISD	equ	0xF95
+  2066                           	global	_TXREG
+  2067  000000                     _TXREG	equ	0xFAD
+  2068                           	global	_TXSTA
+  2069  000000                     _TXSTA	equ	0xFAC
+  2070                           	global	_ADIF
+  2071  000000                     _ADIF	equ	0x7CF6
+  2072                           	global	_GO_nDONE
+  2073  000000                     _GO_nDONE	equ	0x7E11
+  2074                           	global	_RCIF
+  2075  000000                     _RCIF	equ	0x7CF5
+  2076                           	global	_TXIF
+  2077  000000                     _TXIF	equ	0x7CF4
+  2078                           	
+  2079  000309                     STR_2:		; BSR set to: ?
+  2080                           
+  2081  000309  46                 	db	70	;'F'
+  2082  00030A  55                 	db	85	;'U'
+  2083  00030B  43                 	db	67	;'C'
+  2084  00030C  4B                 	db	75	;'K'
+  2085  00030D  2D                 	db	45
+  2086  00030E  49                 	db	73	;'I'
+  2087  00030F  6E                 	db	110	;'n'
+  2088  000310  20                 	db	32
+  2089  000311  50                 	db	80	;'P'
+  2090  000312  72                 	db	114	;'r'
+  2091  000313  6F                 	db	111	;'o'
+  2092  000314  67                 	db	103	;'g'
+  2093  000315  72                 	db	114	;'r'
+  2094  000316  61                 	db	97	;'a'
+  2095  000317  73                 	db	115	;'s'
+  2096  000318  73                 	db	115	;'s'
+  2097  000319  0A                 	db	10
+  2098  00031A  00                 	db	0
+  2099                           	
+  2100  00031B                     STR_6:		; BSR set to: ?
+  2101                           
+  2102  00031B  30                 	db	48	;'0'
+  2103  00031C  31                 	db	49	;'1'
+  2104  00031D  32                 	db	50	;'2'
+  2105  00031E  33                 	db	51	;'3'
+  2106  00031F  34                 	db	52	;'4'
+  2107  000320  35                 	db	53	;'5'
+  2108  000321  36                 	db	54	;'6'
+  2109  000322  37                 	db	55	;'7'
+  2110  000323  38                 	db	56	;'8'
+  2111  000324  39                 	db	57	;'9'
+  2112  000325  61                 	db	97	;'a'
+  2113  000326  62                 	db	98	;'b'
+  2114  000327  63                 	db	99	;'c'
+  2115  000328  64                 	db	100	;'d'
+  2116  000329  65                 	db	101	;'e'
+  2117  00032A  66                 	db	102	;'f'
+  2118  00032B  00                 	db	0
+  2119                           	
+  2120  00032C                     STR_3:		; BSR set to: ?
+  2121                           
+  2122  00032C  46                 	db	70	;'F'
+  2123  00032D  55                 	db	85	;'U'
+  2124  00032E  43                 	db	67	;'C'
+  2125  00032F  4B                 	db	75	;'K'
+  2126  000330  2D                 	db	45
+  2127  000331  46                 	db	70	;'F'
+  2128  000332  69                 	db	105	;'i'
+  2129  000333  6E                 	db	110	;'n'
+  2130  000334  69                 	db	105	;'i'
+  2131  000335  73                 	db	115	;'s'
+  2132  000336  68                 	db	104	;'h'
+  2133  000337  65                 	db	101	;'e'
+  2134  000338  64                 	db	100	;'d'
+  2135  000339  0A                 	db	10
+  2136  00033A  00                 	db	0
+  2137                           	
+  2138  00033B                     STR_1:		; BSR set to: ?
+  2139                           
+  2140  00033B  46                 	db	70	;'F'
+  2141  00033C  55                 	db	85	;'U'
+  2142  00033D  43                 	db	67	;'C'
+  2143  00033E  4B                 	db	75	;'K'
+  2144  00033F  2D                 	db	45
+  2145  000340  53                 	db	83	;'S'
+  2146  000341  74                 	db	116	;'t'
+  2147  000342  61                 	db	97	;'a'
+  2148  000343  72                 	db	114	;'r'
+  2149  000344  74                 	db	116	;'t'
+  2150  000345  65                 	db	101	;'e'
+  2151  000346  64                 	db	100	;'d'
+  2152  000347  0A                 	db	10
+  2153  000348  00                 	db	0
+  2154                           	
+  2155  000349                     STR_5:		; BSR set to: ?
+  2156                           
+  2157  000349  30                 	db	48	;'0'
+  2158  00034A  78                 	db	120	;'x'
+  2159  00034B  25                 	db	37
+  2160  00034C  78                 	db	120	;'x'
+  2161  00034D  20                 	db	32
+  2162  00034E  30                 	db	48	;'0'
+  2163  00034F  78                 	db	120	;'x'
+  2164  000350  25                 	db	37
+  2165  000351  78                 	db	120	;'x'
+  2166  000352  0A                 	db	10
+  2167  000353  00                 	db	0
+  2168                           	
+  2169  000354                     STR_4:		; BSR set to: ?
+  2170                           
+  2171  000354  73                 	db	115	;'s'
+  2172  000355  74                 	db	116	;'t'
+  2173  000356  61                 	db	97	;'a'
+  2174  000357  72                 	db	114	;'r'
+  2175  000358  74                 	db	116	;'t'
+  2176  000359  65                 	db	101	;'e'
+  2177  00035A  64                 	db	100	;'d'
+  2178  00035B  0A                 	db	10
+  2179  00035C  00                 	db	0
+  2180  00035D  00                 	db 0	; dummy byte at the end
+  2181                           	psect	intsave_regs,class=BIGRAM,space=1
+  2182                           	PSECT	param0,class=BANK0,space=1
+  2183                           	GLOBAL	__Lparam0
+  2184                           	FNCONF	param0,??,?
+  2185                           GLOBAL	__Lparam, __Hparam
+  2186                           GLOBAL	__Lparam0, __Hparam0
+  2187  000000                     __Lparam	EQU	__Lparam0
+  2188  000000                     __Hparam	EQU	__Hparam0
+
+
+HI-TECH Software PICC-18 Macro Assembler V9.66 build 8870 
+Symbol Table                                           Sun Aug 26 01:26:13 2012
+
+                    l250 0836                      l244 0872  
+                    l252 0806                      l260 060C  
+                    l245 07EC                      l253 0A58  
+                    l246 086E                      l254 0A54  
+                    l510 09C4                      l262 0610  
+                    l511 09AC                      l248 083E  
+                    l256 0A8A                      l512 09C0  
+                    l264 061E                      l249 07FE  
+                    l514 0A74                      l522 091A  
+                    l258 05EA                      l515 0A62  
+                    l523 0894                      l259 06E6  
+                    l516 0A5E                      l508 09DA  
+                    l540 0528                      l524 091A  
+                    l517 0A70                      l509 09DA  
+                    l541 0374                      l542 0554  
+                    l550 0440                      l526 08EA  
+                    l551 04A2                      l543 03A4  
+                    l544 03F0                      l560 0A1E  
+                    l553 0486                      l545 03C4  
+                    l561 098A                      l554 0510  
+                    l546 03B8                      l562 092C  
+                    l539 0564                      l555 04AA  
+                    l547 0554                      l563 0928  
+                    l556 0528                      l548 03BC  
+                    l564 0950                      l549 03C0  
+                    l557 0A22                      l558 09FE  
+                    l559 09E8                      l881 07B0  
+                    l882 074A                      l875 07BC  
+                    l883 079A                      l876 07B0  
+                    l877 0738                      l878 0726  
+                    l879 074A                      u200 061E  
+                    u201 061A                      u210 0A70  
+                    u211 0A6C                      u300 0554  
+                    u301 0550                      u230 08D8  
+                    u310 0A1E                      u311 0A1A  
+                    u320 0950                      u240 091A  
+                    u321 094C                      u241 0916  
+                    u250 038A                      u251 0386  
+                    u180 0836                      u260 043C  
+                    u181 0832                      u261 0438  
+                    u237 08D2                      u190 086E  
+                    u270 0482                      u191 086A  
+                    u271 047E                      u280 04A2  
+                    u281 049E                      u290 0528  
+                    u291 0524                      u970 0712  
+                    u971 070E                      u980 074A  
+                    u981 0746                      u990 077C  
+                    u991 0778                      wreg 000FE8  
+            main@angValH 00BE              main@angValL 00C0  
+        ??_uart_send_pkt 00E8                     _ADIF 007CF6  
+                   STR_1 033B                     STR_2 0309  
+                   STR_3 032C                     STR_4 0354  
+                   STR_5 0349                     STR_6 031B  
+                   _RCIF 007CF5    eusart_init@usart_mode 00E4  
+                   _TXIF 007CF4                     _main 0566  
+                   _init 0A76                     fsr0h 000FEA  
+                   indf0 000FEF                     fsr0l 000FE9  
+                   prodl 000FF3                     start 0000  
+        eusart_init@baud 00EA          eusart_init@fosc 00E6  
+       ??_uart_send_byte 00EF                    ?_main 00BE  
+                  ?_init 00E4          __end_of___lwdiv 07BE  
+                  _RCREG 000FAE                    _RCSTA 000FAB  
+                  _SPBRG 000FAF                    _PORTB 000F81  
+                  _PORTD 000F83                    _TRISA 000F92  
+                  _TRISB 000F93                    _TRISC 000F94  
+                  _TRISD 000F95                    _TXREG 000FAD  
+                  _TXSTA 000FAC                    _delay 07BE  
+           ?_eusart_init 00E4                    tablat 000FF5  
+       eusart_init@baud1 00EC                    status 000FD8  
+        __end_of_sprintf 0566             __end_of_main 06EE  
+           __end_of_init 0A8C                   ??_main 00BE  
+                 ??_init 00E4            __activetblptr 000002  
+                 ?_delay 00E4                   _ADCON0 000FC2  
+                 _ADCON2 000FC0                   _ADRESH 000FC4  
+                 _ADRESL 000FC3                   _ANSEL0 000FB8  
+                 _ANSEL1 000FB9                   _OSCCON 000FD3  
+                 __Ldata 000000                ??___lwdiv 00FC  
+                 _memset 09DC                   delay@i 00E6  
+                 delay@j 00E8                   _strlen 091C  
+           __mediumconst 035E                   tblptrh 000FF7  
+                 tblptrl 000FF6                ??_sprintf 00EC  
+             __accesstop 0060            __end_of_delay 0874  
+                ??_delay 00E6                  _BAUDCTL 000FAA  
+                ?_memset 00E4                  ?_strlen 00E4  
+  __end_of_uart_send_pkt 091C                  __Hparam 0100  
+                __Lparam 00BE        uart_send_pkt@size 00E6  
+                ___lwdiv 06EE                  __ramtop 0300  
+                _sprintf 035E                  memset@c 00E6  
+                memset@n 00E8                  memset@p 00EA  
+          __Lmediumconst 035E        __end_of_toggleLed 0A5A  
+                postdec0 000FED                  postinc0 000FEE  
+                strlen@s 00E4       eusart_init@tx_mode 00E5  
+             main@buffer 00C2           __end_of_memset 0A24  
+         __end_of_strlen 098C                 ??_memset 00EA  
+               ??_strlen 00E6            ??_eusart_init 00EC  
+            sprintf@_val 00F1              sprintf@flag 00EC  
+            sprintf@prec 00ED         ___lwdiv@dividend 00F8  
+               ?___lwdiv 00F8              __smallconst 0300  
+         _uart_send_byte 0A5A         uart_send_pkt@pkt 00E4  
+              _hexpowers 0301         ___lwdiv@quotient 00FD  
+               ?_sprintf 00E4      __end_of_eusart_init 09DC  
+               _GO_nDONE 007E11                _toggleLed 0A24  
+ __end_of_uart_send_byte 0A76       uart_send_byte@byte 00EE  
+               __Hparam0 0100                 __Lparam0 00BE  
+           __Lsmallconst 0300               ?_toggleLed 00E4  
+        ?_uart_send_byte 00EE          ___lwdiv@divisor 00FA  
+        ___lwdiv@counter 00FC              _eusart_init 098C  
+          _uart_send_pkt 0874                 delay@cnt 00E4  
+               memset@p1 00E4           ?_uart_send_pkt 00E4  
+              sprintf@ap 00EF                sprintf@sp 00E4  
+         uart_send_pkt@i 00EA           uart_send_pkt@j 00E8  
+            ??_toggleLed 00E4                 sprintf@c 00EE  
+               sprintf@f 00E6                 strlen@cp 00E6  

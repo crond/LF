@@ -1,0 +1,58 @@
+EESchema-DOCLIB  Version 2.0  9/2/2012 10:35:32 PM
+#
+$CMP 7805
+D Linear Regulator +5V
+K POWER REGUL
+F regulator/lm78*.*
+$ENDCMP
+#
+$CMP C
+D Condensateur non polarise
+$ENDCMP
+#
+$CMP CONN_1
+D 1 pin
+K CONN
+$ENDCMP
+#
+$CMP CONN_2
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP CONN_20
+D Symbole general de connexion
+K CONN
+$ENDCMP
+#
+$CMP CONN_3
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP CONN_4
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP CONN_6
+D ymbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP CONN_8
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP DIODE
+D Diode simple
+K DEV DIODE
+$ENDCMP
+#
+$CMP R
+D Resistance
+K R DEV
+$ENDCMP
+#
+#End Doc Library

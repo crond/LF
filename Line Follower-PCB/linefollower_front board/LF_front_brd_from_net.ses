@@ -1,0 +1,417 @@
+
+(session LF_front_brd.ses
+  (base_design LF_front_brd.dsn)
+  (placement
+    (resolution mil 10)
+    (component "LED-3MM"
+      (place D1 59350 -21555 front 0)
+      (place D2 59252 -26575 front 0)
+      (place D3 59252 -32382 front 0)
+      (place D4 59449 -37303 front 0)
+      (place D5 59449 -42224 front 0)
+      (place D6 59449 -47638 front 0)
+      (place D7 59350 -23720 front 180)
+      (place D8 59252 -28740 front 180)
+      (place D9 59252 -34744 front 180)
+      (place D10 59449 -39272 front 180)
+      (place D11 59449 -44488 front 180)
+      (place D12 59449 -49705 front 180)
+    )
+    (component "PIN_ARRAY-6X1"
+      (place P1 50295 -31299 front 270)
+    )
+    (component PIN_ARRAY_2X1
+      (place P2 50295 -35433 front 270)
+    )
+    (component R4
+      (place R1 54724 -20276 front 180)
+      (place R2 54724 -24508 front 180)
+      (place R3 54921 -34350 front 0)
+      (place R4 54921 -37992 front 0)
+      (place R5 54921 -42224 front 0)
+      (place R6 54921 -47638 front 0)
+      (place R7 54724 -22244 front 0)
+      (place R8 54724 -26181 front 0)
+      (place R9 54921 -36024 front 0)
+      (place R10 54921 -39665 front 0)
+      (place R11 54921 -44488 front 0)
+      (place R12 54921 -49705 front 0)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution mil 10)
+    (parser
+      (host_cad "Kicad's PCBNEW")
+      (host_version "(20090216-final)")
+    )
+    (library_out 
+      (padstack "Via[0-1]_78.7:25_mil"
+        (shape
+          (circle Component 788 0 0)
+        )
+        (shape
+          (circle Copper 788 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-1]_45:25_mil"
+        (shape
+          (circle Component 450 0 0)
+        )
+        (shape
+          (circle Copper 450 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+      (net "N-000014"
+        (wire
+          (path Copper 316
+            56724 -20276
+            57571 -20276
+            58850 -21555
+          )
+        )
+      )
+      (net GND
+        (wire
+          (path Copper 316
+            59949 -37303
+            59949 -34941
+            59752 -34744
+          )
+        )
+        (wire
+          (path Copper 316
+            59752 -32382
+            59752 -34744
+          )
+        )
+        (wire
+          (path Copper 316
+            59752 -32382
+            59752 -28740
+          )
+        )
+        (wire
+          (path Copper 316
+            59949 -49705
+            59949 -47638
+          )
+        )
+        (wire
+          (path Copper 316
+            50295 -35933
+            50295 -48119
+            52513 -50337
+            59317 -50337
+            59949 -49705
+          )
+        )
+        (wire
+          (path Copper 316
+            59949 -47638
+            59949 -44488
+          )
+        )
+        (wire
+          (path Copper 316
+            59752 -26575
+            59850 -26477
+            59850 -23720
+          )
+        )
+        (wire
+          (path Copper 316
+            59752 -28740
+            59752 -26575
+          )
+        )
+        (wire
+          (path Copper 316
+            59949 -39272
+            59949 -37303
+          )
+        )
+        (wire
+          (path Copper 316
+            59949 -42224
+            59949 -39272
+          )
+        )
+        (wire
+          (path Copper 316
+            59949 -44488
+            59949 -42224
+          )
+        )
+        (wire
+          (path Copper 316
+            59850 -23720
+            59850 -21555
+          )
+        )
+      )
+      (net "N-000013"
+        (wire
+          (path Copper 316
+            56724 -24508
+            58752 -26536
+            58752 -26575
+          )
+        )
+      )
+      (net "N-000012"
+        (wire
+          (path Copper 316
+            56921 -34350
+            56921 -34213
+            58752 -32382
+          )
+        )
+      )
+      (net "N-000011"
+        (wire
+          (path Copper 316
+            56921 -37992
+            58260 -37992
+            58949 -37303
+          )
+        )
+      )
+      (net "N-000010"
+        (wire
+          (path Copper 316
+            56921 -42224
+            58949 -42224
+          )
+        )
+      )
+      (net "N-000009"
+        (wire
+          (path Copper 316
+            56921 -47638
+            58949 -47638
+          )
+        )
+      )
+      (net "N-000001"
+        (wire
+          (path Copper 316
+            56897 -22907
+            51005 -28799
+          )
+        )
+        (wire
+          (path Copper 316
+            58850 -23720
+            58037 -22907
+            56897 -22907
+          )
+        )
+        (wire
+          (path Copper 316
+            56724 -22244
+            56897 -22417
+            56897 -22907
+          )
+        )
+        (wire
+          (path Copper 316
+            50295 -28799
+            51005 -28799
+          )
+        )
+      )
+      (net "N-000006"
+        (wire
+          (path Copper 316
+            56724 -26712
+            58752 -28740
+          )
+        )
+        (wire
+          (path Copper 316
+            56724 -26181
+            56724 -26712
+          )
+        )
+        (wire
+          (path Copper 316
+            50295 -29799
+            53637 -29799
+            56724 -26712
+          )
+        )
+      )
+      (net "N-000003"
+        (wire
+          (path Copper 316
+            56921 -35596
+            52124 -30799
+            50295 -30799
+          )
+        )
+        (wire
+          (path Copper 316
+            56921 -36024
+            56921 -35596
+          )
+        )
+        (wire
+          (path Copper 316
+            56921 -35596
+            57900 -35596
+            58752 -34744
+          )
+        )
+      )
+      (net "N-000005"
+        (wire
+          (path Copper 316
+            56921 -39397
+            58824 -39397
+            58949 -39272
+          )
+        )
+        (wire
+          (path Copper 316
+            50295 -31799
+            52587 -31799
+            54786 -33998
+            54786 -37262
+            56921 -39397
+          )
+        )
+        (wire
+          (path Copper 316
+            56921 -39665
+            56921 -39397
+          )
+        )
+      )
+      (net "N-000002"
+        (wire
+          (path Copper 316
+            56921 -44488
+            54279 -41846
+            54279 -34026
+            53052 -32799
+            50295 -32799
+          )
+        )
+        (wire
+          (path Copper 316
+            58949 -44488
+            56921 -44488
+          )
+        )
+      )
+      (net "N-000004"
+        (wire
+          (path Copper 316
+            56921 -49705
+            53797 -46581
+            53797 -34347
+            53060 -33610
+            50484 -33610
+            50295 -33799
+          )
+        )
+        (wire
+          (path Copper 316
+            58949 -49705
+            56921 -49705
+          )
+        )
+      )
+      (net +5V
+        (wire
+          (path Copper 316
+            50295 -34933
+            49622 -34260
+            49622 -28275
+            51716 -26181
+            52724 -26181
+          )
+        )
+        (wire
+          (path Copper 316
+            52338 -34933
+            50295 -34933
+          )
+        )
+        (wire
+          (path Copper 316
+            52921 -36024
+            52338 -35441
+            52338 -34933
+          )
+        )
+        (wire
+          (path Copper 316
+            52921 -37992
+            52921 -36024
+          )
+        )
+        (wire
+          (path Copper 316
+            52921 -34350
+            52338 -34933
+          )
+        )
+        (wire
+          (path Copper 316
+            52724 -26181
+            52724 -24508
+          )
+        )
+        (wire
+          (path Copper 316
+            52724 -24508
+            52724 -22244
+          )
+        )
+        (wire
+          (path Copper 316
+            52921 -39665
+            52921 -37992
+          )
+        )
+        (wire
+          (path Copper 316
+            52921 -42224
+            52921 -39665
+          )
+        )
+        (wire
+          (path Copper 316
+            52921 -44488
+            52921 -42224
+          )
+        )
+        (wire
+          (path Copper 316
+            52921 -47638
+            52921 -44488
+          )
+        )
+        (wire
+          (path Copper 316
+            52921 -49705
+            52921 -47638
+          )
+        )
+        (wire
+          (path Copper 316
+            52724 -22244
+            52724 -20276
+          )
+        )
+      )
+    )
+  )
+)

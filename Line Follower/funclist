@@ -1,0 +1,12 @@
+_delay: CODE, 1982 0 182
+_uart_send_pkt: CODE, 2164 0 168
+_memset: CODE, 2524 0 72
+_uart_send_byte: CODE, 2650 0 28
+_sprintf: CODE, 862 0 520
+_toggleLed: CODE, 2596 0 54
+_main: CODE, 1382 0 392
+_strlen: CODE, 2332 0 112
+_eusart_init: CODE, 2444 0 80
+___lwdiv: CODE, 1774 0 208
+_init: CODE, 2678 0 22
+Total: 1838

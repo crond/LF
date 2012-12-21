@@ -1,0 +1,185 @@
+(pcb "G:\root\Robotics\LF_v0.1\Line Follower-PCB\linefollower_front board\LF_front_brd.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "Kicad's PCBNEW")
+    (host_version "(20090216-final)")
+  )
+  (resolution mil 10)
+  (unit mil)
+  (structure
+    (layer Component
+      (type signal)
+      (property 
+        (index 0)
+      )
+    )
+    (layer Copper
+      (type signal)
+      (property 
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  4704.7 -5275.6  4704.7 -5295.3  6368.1 -5295.3  6368.1 -1801.2
+            4704.7 -1801.2  4704.7 -5275.6)
+    )
+    (via "Via[0-1]_78.7:25_mil" "Via[0-1]_45:25_mil")
+    (rule
+      (width 31.5)
+      (clearance 6.1)
+      (clearance 8.1 (type default_smd))
+      (clearance 1.5 (type smd_smd))
+    )
+  )
+  (placement
+    (component "LED-3MM"
+      (place D1 5935 -2155.5 front 0 (PN LED))
+      (place D2 5925.2 -2657.5 front 0 (PN LED))
+      (place D3 5925.2 -3238.2 front 0 (PN LED))
+      (place D4 5944.9 -3730.3 front 0 (PN LED))
+      (place D5 5944.9 -4222.4 front 0 (PN LED))
+      (place D6 5944.9 -4763.8 front 0 (PN LED))
+      (place D7 5935 -2372 front 180 (PN LED))
+      (place D8 5925.2 -2874 front 180 (PN LED))
+      (place D9 5925.2 -3474.4 front 180 (PN LED))
+      (place D10 5944.9 -3927.2 front 180 (PN LED))
+      (place D11 5944.9 -4448.8 front 180 (PN LED))
+      (place D12 5944.9 -4970.5 front 180 (PN LED))
+    )
+    (component "PIN_ARRAY-6X1"
+      (place P1 5029.5 -3129.9 front 270 (PN CONN_6))
+    )
+    (component PIN_ARRAY_2X1
+      (place P2 5029.5 -3543.3 front 270 (PN CONN_2))
+    )
+    (component R4
+      (place R1 5472.4 -2027.6 front 180 (PN R))
+      (place R2 5472.4 -2450.8 front 180 (PN R))
+      (place R3 5492.1 -3435 front 0 (PN R))
+      (place R4 5492.1 -3799.2 front 0 (PN R))
+      (place R5 5492.1 -4222.4 front 0 (PN R))
+      (place R6 5492.1 -4763.8 front 0 (PN R))
+      (place R7 5472.4 -2224.4 front 0 (PN R))
+      (place R8 5472.4 -2618.1 front 0 (PN R))
+      (place R9 5492.1 -3602.4 front 0 (PN R))
+      (place R10 5492.1 -3966.5 front 0 (PN R))
+      (place R11 5492.1 -4448.8 front 0 (PN R))
+      (place R12 5492.1 -4970.5 front 0 (PN R))
+    )
+  )
+  (library
+    (image "LED-3MM"
+      (outline (path signal 10  72 -50  72 50))
+      (pin Round[A]Pad_78.7_mil 1 -50 0)
+      (pin Round[A]Pad_78.7_mil 2 50 0)
+    )
+    (image "PIN_ARRAY-6X1"
+      (outline (path signal 12  -300 -50  -300 50))
+      (outline (path signal 12  -300 50  300 50))
+      (outline (path signal 12  300 50  300 -50))
+      (outline (path signal 12  300 -50  -300 -50))
+      (outline (path signal 12  -200 -50  -200 50))
+      (pin Rect[A]Pad_78.7x78.7_mil 1 -250 0)
+      (pin Round[A]Pad_78.7_mil 2 -150 0)
+      (pin Round[A]Pad_78.7_mil 3 -50 0)
+      (pin Round[A]Pad_78.7_mil 4 50 0)
+      (pin Round[A]Pad_78.7_mil 5 150 0)
+      (pin Round[A]Pad_78.7_mil 6 250 0)
+    )
+    (image PIN_ARRAY_2X1
+      (outline (path signal 6  -100 -50  -100 50))
+      (outline (path signal 6  -100 50  100 50))
+      (outline (path signal 6  100 50  100 -50))
+      (outline (path signal 6  100 -50  -100 -50))
+      (pin Round[A]Pad_78.7_mil 1 -50 0)
+      (pin Round[A]Pad_78.7_mil 2 50 0)
+    )
+    (image R4
+      (outline (path signal 12  -200 0  -160 0))
+      (outline (path signal 12  -160 0  -160 40))
+      (outline (path signal 12  -160 40  160 40))
+      (outline (path signal 12  160 40  160 -40))
+      (outline (path signal 12  160 -40  -160 -40))
+      (outline (path signal 12  -160 -40  -160 0))
+      (outline (path signal 12  -160 20  -140 40))
+      (outline (path signal 12  200 0  160 0))
+      (pin Round[A]Pad_78.7_mil 1 -200 0)
+      (pin Round[A]Pad_78.7_mil 2 200 0)
+    )
+    (padstack Round[A]Pad_78.7_mil
+      (shape (circle Component 78.7))
+      (shape (circle Copper 78.7))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_78.7x78.7_mil
+      (shape (rect Component -39.35 -39.35 39.35 39.35))
+      (shape (rect Copper -39.35 -39.35 39.35 39.35))
+      (attach off)
+    )
+    (padstack "Via[0-1]_78.7:25_mil"
+      (shape (circle Component 78.7))
+      (shape (circle Copper 78.7))
+      (attach off)
+    )
+    (padstack "Via[0-1]_45:25_mil"
+      (shape (circle Component 45))
+      (shape (circle Copper 45))
+      (attach off)
+    )
+  )
+  (network
+    (net "N-000014"
+      (pins D1-1 R1-1)
+    )
+    (net GND
+      (pins D1-2 D2-2 D3-2 D4-2 D5-2 D6-2 D7-1 D8-1 D9-1 D10-1 D11-1 D12-1 P2-2)
+    )
+    (net "N-000013"
+      (pins D2-1 R2-1)
+    )
+    (net "N-000012"
+      (pins D3-1 R3-2)
+    )
+    (net "N-000011"
+      (pins D4-1 R4-2)
+    )
+    (net "N-000010"
+      (pins D5-1 R5-2)
+    )
+    (net "N-000009"
+      (pins D6-1 R6-2)
+    )
+    (net "N-000001"
+      (pins D7-2 P1-1 R7-2)
+    )
+    (net "N-000006"
+      (pins D8-2 P1-2 R8-2)
+    )
+    (net "N-000003"
+      (pins D9-2 P1-3 R9-2)
+    )
+    (net "N-000005"
+      (pins D10-2 P1-4 R10-2)
+    )
+    (net "N-000002"
+      (pins D11-2 P1-5 R11-2)
+    )
+    (net "N-000004"
+      (pins D12-2 P1-6 R12-2)
+    )
+    (net +5V
+      (pins P2-1 R1-2 R2-2 R3-1 R4-1 R5-1 R6-1 R7-1 R8-1 R9-1 R10-1 R11-1 R12-1)
+    )
+    (class kicad_default +5V GND "N-000001" "N-000002" "N-000003" "N-000004"
+      "N-000005" "N-000006" "N-000009" "N-000010" "N-000011" "N-000012" "N-000013"
+      "N-000014"
+      (circuit
+        (use_via Via[0-1]_78.7:25_mil)
+      )
+      (rule (width 31.5))
+    )
+  )
+  (wiring
+  )
+)

@@ -1,0 +1,186 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4431 ]
+"532 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\lib\doprnt.c
+[s S106 . 5 `*.MDCuc 1 _cp 3 0 `ui 1 _len 2 3 ]
+[u S109 . 5 `ui 1 _val 2 0 `S106 1 _str 5 0 ]
+"492
+[v _sprintf `(i  1 e 2 0 ]
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\lwdiv.c
+[v ___lwdiv `(ui  1 e 2 0 ]
+"10 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\memset.c
+[v _memset `(*.Mv  1 e 2 0 ]
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\strlen.c
+[v _strlen `(ui  1 e 2 0 ]
+"5 G:\root\Robotics\Line Follower\linefollower_main.c
+[v _delay `(i  1 e 2 0 ]
+"16
+[v _toggleLed `(i  1 e 2 0 ]
+"74
+[v _init `(i  1 e 2 0 ]
+"101
+[v _main `(i  1 e 2 0 ]
+"5 G:\root\Robotics\Line Follower\uart.c
+[v _eusart_init `(v  1 e 0 0 ]
+"30
+[v _uart_send_byte `(v  1 e 0 0 ]
+"49
+[v _uart_send_pkt `(v  1 e 0 0 ]
+"789 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\include\pic18f4431.h
+[v _PORTB `Vuc  1 e 1 @3969 ]
+"899
+[v _PORTD `Vuc  1 e 1 @3971 ]
+"1083
+[v _TRISA `Vuc  1 e 1 @3986 ]
+"1126
+[v _TRISB `Vuc  1 e 1 @3987 ]
+"1169
+[v _TRISC `Vuc  1 e 1 @3988 ]
+"1212
+[v _TRISD `Vuc  1 e 1 @3989 ]
+"1410
+[v _TXIF `Vb  1 e 0 @31988 ]
+"1411
+[v _RCIF `Vb  1 e 0 @31989 ]
+"1412
+[v _ADIF `Vb  1 e 0 @31990 ]
+"1613
+[v _BAUDCTL `Vuc  1 e 1 @4010 ]
+"1644
+[v _RCSTA `Vuc  1 e 1 @4011 ]
+"1673
+[v _TXSTA `Vuc  1 e 1 @4012 ]
+"1697
+[v _TXREG `Vuc  1 e 1 @4013 ]
+"1701
+[v _RCREG `Vuc  1 e 1 @4014 ]
+"1705
+[v _SPBRG `Vuc  1 e 1 @4015 ]
+"1806
+[v _ANSEL0 `Vuc  1 e 1 @4024 ]
+"1830
+[v _ANSEL1 `Vuc  1 e 1 @4025 ]
+"1926
+[v _ADCON2 `Vuc  1 e 1 @4032 ]
+"1987
+[v _ADCON0 `Vuc  1 e 1 @4034 ]
+"1990
+[v _GO_nDONE `Vb  1 e 0 @32273 ]
+"2041
+[v _ADRESL `Vuc  1 e 1 @4035 ]
+"2045
+[v _ADRESH `Vuc  1 e 1 @4036 ]
+"2330
+[v _OSCCON `Vuc  1 e 1 @4051 ]
+"362 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\lib\doprnt.c
+[v _hexpowers `DC[4]ui  1 s 8 _hexpowers ]
+"101 G:\root\Robotics\Line Follower\linefollower_main.c
+[v _main `(i  1 e 2 0 ]
+{
+"102
+[v _angValH `s  1 a 2 0 ]
+[v _angValL `s  1 a 2 2 ]
+"103
+[v _buffer `[32]uc  1 a 32 4 ]
+"149
+} 36
+"10 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\memset.c
+[v _memset `(*.Mv  1 e 2 0 ]
+{
+"15
+[v _p `*.buc  1 a 2 0 ]
+"10
+[v _p1 `*.bv  1 p 2 0 ]
+[v _c `i  1 p 2 2 ]
+[v _n `ui  1 p 2 4 ]
+"22
+} 2
+"49 G:\root\Robotics\Line Follower\uart.c
+[v _uart_send_pkt `(v  1 e 0 0 ]
+{
+"50
+[v _j `i  1 a 2 0 ]
+[v _i `i  1 a 2 2 ]
+"49
+[v _pkt `*.suc  1 p 2 0 ]
+[v _size `i  1 p 2 2 ]
+"56
+} 4
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\strlen.c
+[v _strlen `(ui  1 e 2 0 ]
+{
+"6
+[v _cp `*.bDCuc  1 a 2 0 ]
+"5
+[v _s `*.bDCuc  1 p 2 0 ]
+"12
+} 2
+"492 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\lib\doprnt.c
+[v _sprintf `(i  1 e 2 0 ]
+{
+"507
+[v _flag `uc  1 a 1 0 ]
+"505
+[v _prec `c  1 a 1 1 ]
+"498
+[v _c `c  1 a 1 2 ]
+"493
+[v _ap `[1]*.Mv  1 a 2 3 ]
+"532
+[v __val `S109  1 a 5 5 ]
+"492
+[v _sp `*.buc  1 p 2 0 ]
+[v _f `*.cDCuc  1 p 2 2 ]
+"1532
+} 10
+"5 G:\root\Robotics\Line Follower\uart.c
+[v _eusart_init `(v  1 e 0 0 ]
+{
+"6
+[v _baud1 `f  1 a 3 0 ]
+"5
+[v _usart_mode `uc  1 p 1 0 ]
+[v _tx_mode `uc  1 p 1 1 ]
+[v _fosc `ul  1 p 4 2 ]
+[v _baud `ui  1 p 2 6 ]
+"27
+} 3
+"74 G:\root\Robotics\Line Follower\linefollower_main.c
+[v _init `(i  1 e 2 0 ]
+{
+"95
+} 0
+"16
+[v _toggleLed `(i  1 e 2 0 ]
+{
+"26
+} 0
+"5
+[v _delay `(i  1 e 2 0 ]
+{
+"6
+[v _i `i  1 a 2 0 ]
+[v _j `i  1 a 2 2 ]
+"5
+[v _cnt `i  1 p 2 0 ]
+"14
+} 4
+"5 C:\Program Files\HI-TECH Software\PICC-18\PRO\9.66\sources\lwdiv.c
+[v ___lwdiv `(ui  1 e 2 0 ]
+{
+"7
+[v _counter `uc  1 a 1 0 ]
+"6
+[v _quotient `ui  1 a 2 1 ]
+"5
+[v _dividend `ui  1 p 2 0 ]
+[v _divisor `ui  1 p 2 2 ]
+"26
+} 3
+"30 G:\root\Robotics\Line Follower\uart.c
+[v _uart_send_byte `(v  1 e 0 0 ]
+{
+[v _byte `uc  1 p 1 0 ]
+"37
+} 0
